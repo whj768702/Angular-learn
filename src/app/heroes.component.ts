@@ -9,10 +9,8 @@ import {Router} from "@angular/router";
 @Component({
     // moduleId: module.id,
     selector: 'my-heroes',
-    providers: [HeroService],
-    templateUrl: './heroes.component.html'
-    // ,
-    // styleUrls: ['heroes.component.css']
+    templateUrl: './heroes.component.html',
+    styleUrls: ['heroes.component.css']
 })
 
 export class HeroesComponent implements OnInit{
