@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Hero} from "../hero";
 import {HeroService} from "../services/hero.service";
 import {Router} from "@angular/router";
+import {Logger} from "../services/logger.service";
 
 // import '../../public/css/styles.css';
 
@@ -10,7 +11,8 @@ import {Router} from "@angular/router";
     // moduleId: module.id,
     selector: 'my-heroes',
     templateUrl: '../views/heroes.component.html',
-    styleUrls: ['../styles/heroes.component.css']
+    styleUrls: ['../styles/heroes.component.css'],
+    providers: [Logger]
 })
 
 export class HeroesComponent implements OnInit{
@@ -19,7 +21,8 @@ export class HeroesComponent implements OnInit{
 
     constructor(
         private heroService: HeroService,
-        private router: Router){
+        private router: Router,
+        private logger: Logger){
     }
 
     onSelect(hero: Hero): void{
@@ -27,6 +30,7 @@ export class HeroesComponent implements OnInit{
     }
     getHeroes(): void{
         this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+        this.logger.log('getting heroes……');
     }
     ngOnInit(): void{
         this.getHeroes();
