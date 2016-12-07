@@ -15,8 +15,8 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
 
 import './rxjs-extensions';
-import {HeroSearchComponent} from "./components/hero-search.component";
-import {CrisisCenterComponent} from "./components/crisis-center.component";
+import { HeroSearchComponent } from "./components/hero-search.component";
+import { CrisisCenterComponent } from "./components/crisis-center.component";
 
 @NgModule({
     imports: [
