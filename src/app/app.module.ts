@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, OnInit} from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -16,6 +16,7 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 
 import './rxjs-extensions';
 import {HeroSearchComponent} from "./components/hero-search.component";
+import {CrisisCenterComponent} from "./components/crisis-center.component";
 
 @NgModule({
     imports: [
@@ -30,9 +31,18 @@ import {HeroSearchComponent} from "./components/hero-search.component";
         HeroDetailComponent,
         HeroesComponent,
         DashboardComponent,
-        HeroSearchComponent
+        HeroSearchComponent,
+        CrisisCenterComponent
     ],
     providers: [ HeroService ],
     bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule implements OnInit{
+    crises: any;
+
+    constructor(){}
+
+    ngOnInit(): void{
+
+    }
+}
