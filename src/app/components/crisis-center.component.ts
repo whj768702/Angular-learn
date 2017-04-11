@@ -1,5 +1,4 @@
 import {Component, OnInit}from '@angular/core';
-
 class Crisis{
     id: number;
     name: string;
@@ -12,8 +11,9 @@ const Crises: Crisis[] = [
 
 @Component({
     selector: 'crisis-center',
-    templateUrl: '../views/crisis-center.component.html',
-    styleUrls: ['../styles/crisis-center.component.css']
+    // moduleId: module.id,
+    templateUrl: 'crisis-center.component.html',
+    styleUrls: ['crisis-center.component.css']
 })
 
 export class CrisisCenterComponent implements OnInit{
