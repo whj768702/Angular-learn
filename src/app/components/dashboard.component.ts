@@ -4,7 +4,7 @@ import {HeroService} from "../services/hero.service";
 
 @Component({
     // moduleId: module.id,
-    selector: 'my-dashboard',
+    selector: 'sg-my-dashboard',
     templateUrl: '../views/dashboard.component.html',
     styleUrls: ['../styles/dashboard.component.css']
 })

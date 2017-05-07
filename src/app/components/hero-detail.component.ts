@@ -8,7 +8,7 @@ import 'rxjs/add/operator/switchMap';
 
 @Component({
     // moduleId: module.id,
-    selector: 'my-hero-detail',
+    selector: 'sg-my-hero-detail',
     templateUrl: '../views/hero-detail.component.html',
     styleUrls: ['../styles/hero-detail.component.css']
 })

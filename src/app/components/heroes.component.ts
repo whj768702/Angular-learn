@@ -9,7 +9,7 @@ import {Logger} from "../services/logger.service";
 
 @Component({
     // moduleId: module.id,
-    selector: 'my-heroes',
+    selector: 'sg-my-heroes',
     templateUrl: '../views/heroes.component.html',
     styleUrls: ['../styles/heroes.component.css'],
     providers: [Logger]

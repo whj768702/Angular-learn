@@ -10,7 +10,7 @@ const Crises: Crisis[] = [
 ];
 
 @Component({
-    selector: 'crisis-center',
+    selector: 'sg-crisis-center',
     // moduleId: module.id,
     templateUrl: 'crisis-center.component.html',
     styleUrls: ['crisis-center.component.css']
