@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Hero } from "../hero";
-import { HeroService } from "../services/hero.service";
+import { Hero } from "../../hero";
+import { HeroService } from "../../services/hero.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import { Location } from '@angular/common';
 
@@ -9,8 +9,8 @@ import 'rxjs/add/operator/switchMap';
 @Component({
     // moduleId: module.id,
     selector: 'sg-my-hero-detail',
-    templateUrl: '../views/hero-detail.component.html',
-    styleUrls: ['../styles/hero-detail.component.css']
+    templateUrl: './hero-detail.component.html',
+    styleUrls: ['./hero-detail.component.css']
 })
 
 export class HeroDetailComponent implements OnInit{

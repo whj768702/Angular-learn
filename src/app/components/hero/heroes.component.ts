@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Hero} from "../hero";
-import {HeroService} from "../services/hero.service";
+import {Hero} from "../../hero";
+import {HeroService} from "../../services/hero.service";
 import {Router} from "@angular/router";
-import {Logger} from "../services/logger.service";
+import {Logger} from "../../services/logger.service";
 
 // import '../../public/css/styles.css';
 
 @Component({
     // moduleId: module.id,
     selector: 'sg-my-heroes',
-    templateUrl: '../views/heroes.component.html',
-    styleUrls: ['../styles/heroes.component.css'],
+    templateUrl: './heroes.component.html',
+    styleUrls: ['./heroes.component.css'],
     providers: [Logger]
 })
 

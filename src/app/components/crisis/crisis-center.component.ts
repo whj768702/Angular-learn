@@ -1,12 +1,12 @@
 import {Component, OnInit}from '@angular/core';
 class Crisis{
     id: number;
-    name: string;
+    type: string;
 }
 const Crises: Crisis[] = [
-    {id: 1, name: 'fire'},
-    {id: 2, name: 'earthquake'},
-    {id: 3, name: 'flood'}
+    {id: 1, type: 'fire'},
+    {id: 2, type: 'earthquake'},
+    {id: 3, type: 'flood'}
 ];
 
 @Component({
@@ -24,6 +24,10 @@ export class CrisisCenterComponent implements OnInit{
 
     ngOnInit(): void{
         this.crises = Crises;
+    }
+
+    show(): void{
+        console.log()
     }
 
 }

@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HeroesComponent } from './heroes.component';
+import { HeroesComponent } from './hero/heroes.component';
 describe('App', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({ declarations: [HeroesComponent]});
