@@ -3,6 +3,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 var openBrowserPlugin = require('open-browser-webpack-plugin');
+var Happypack = require('happypack');
+var HappypackThreadPool = Happypack.ThreadPool({size:8});
 
 module.exports = {
     entry: {
@@ -20,7 +22,7 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+                loaders: ['awesome-typescript-loader?id=ts', 'angular2-template-loader?id=ts']
             },
             {
                 test: /\.html$/,
@@ -54,6 +56,13 @@ module.exports = {
 
         new openBrowserPlugin({
             url: 'http://localhost:8080'
+        }),
+
+        new Happypack({
+            id: 'ts',
+            threadPool: HappypackThreadPool,
+            loaders:['awesome-typescript-loader', 'angular2-template-loader']
+
         })
     ]
 };
