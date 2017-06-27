@@ -26,8 +26,7 @@ export class CrisisCenterComponent implements OnInit{
         this.crises = Crises;
     }
 
-    show(): void{
-        console.log()
+    show(id: number): void{
+        console.log(id);
     }
-
 }

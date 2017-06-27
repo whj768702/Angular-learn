@@ -37,3 +37,6 @@
     -moz-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
 }
+.crises button{
+    float: right;
+}

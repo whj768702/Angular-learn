@@ -5,13 +5,15 @@ import { DashboardComponent }   from '../components/dashboard/dashboard.componen
 import { HeroesComponent }      from '../components/hero/heroes.component';
 import { HeroDetailComponent }  from '../components/hero/hero-detail.component';
 import { CrisisCenterComponent } from "../components/crisis/crisis-center.component";
+import {CrisisDetailComponent} from "../components/crisis/crisis-detail.component";
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard',  component: DashboardComponent },
     { path: 'detail/:id', component: HeroDetailComponent },
     { path: 'heroes',     component: HeroesComponent },
-    { path: 'crisis', component: CrisisCenterComponent}
+    { path: 'crisis', component: CrisisCenterComponent},
+    { path: 'crisis-detail/:id', component: CrisisDetailComponent}
 ];
 
 @NgModule({
