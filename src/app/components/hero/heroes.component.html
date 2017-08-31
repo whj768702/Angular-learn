@@ -18,3 +18,11 @@
         Add
     </button>
 </div>
+
+<div>my-hero-detail</div>
+<sg-my-hero-detail [myHero]="selectedHero" (onVote)="onVoted($event)"></sg-my-hero-detail>
+
+<div>
+    vote
+    <h3>agree:{{agreed}},disagreed:{{disagreed}}</h3>
+</div>

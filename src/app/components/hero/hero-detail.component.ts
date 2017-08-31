@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 import { Hero } from "../../hero";
 import { HeroService } from "../../services/hero.service";
 import {ActivatedRoute, Params} from "@angular/router";
@@ -15,6 +15,26 @@ import 'rxjs/add/operator/switchMap';
 
 export class HeroDetailComponent implements OnInit{
     hero: Hero;
+    _myHero: Hero;
+
+    @Input()
+    set myHero(myHero: Hero){
+        this._myHero = myHero;
+    }
+    get myHero(): Hero{
+        console.log('get'+this._myHero);
+        return this._myHero;
+    }
+    @Input() set id(value:any){
+        console.log(value);
+    };
+
+    @Output() onVote = new EventEmitter<boolean>();
+    voted:boolean=false;
+    vote(argreed:boolean){
+        this.onVote.emit(argreed);
+        this.voted = true;
+    }
 
     constructor(
         private heroService: HeroService,
@@ -36,7 +56,9 @@ export class HeroDetailComponent implements OnInit{
             this.heroService.update(this.hero)
                 .then(() => this.goBack());
     }
-
+    deleteHero(value:any):void{
+        console.log(value);
+    }
     // add(name: string): void {
     //     name = name.trim();
     //     if (!name) { return; }

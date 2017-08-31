@@ -19,6 +19,10 @@ import { HeroSearchComponent } from "./components/hero/hero-search.component";
 import { CrisisCenterComponent } from "./components/crisis/crisis-center.component";
 import {CrisisDetailComponent} from "./components/crisis/crisis-detail.component";
 
+import { CountdownParentComponent } from "./components/countdown/countdown-parent.component";
+import { CountdownTimerComponent} from "./components/countdown/countdown-timer.component";
+import {CountdownParentComponent2} from "./components/countdown/countdown-parent.component2";
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -34,7 +38,10 @@ import {CrisisDetailComponent} from "./components/crisis/crisis-detail.component
         DashboardComponent,
         HeroSearchComponent,
         CrisisCenterComponent,
-        CrisisDetailComponent
+        CrisisDetailComponent,
+        CountdownParentComponent,
+        CountdownTimerComponent,
+        CountdownParentComponent2
     ],
     providers: [ HeroService ],
     bootstrap: [ AppComponent ]

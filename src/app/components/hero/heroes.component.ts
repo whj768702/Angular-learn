@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 
 import {Hero} from "../../hero";
 import {HeroService} from "../../services/hero.service";
@@ -15,7 +15,7 @@ import {Logger} from "../../services/logger.service";
     providers: [Logger]
 })
 
-export class HeroesComponent implements OnInit{
+export class HeroesComponent implements OnInit, OnChanges, OnDestroy{
     heroes: Hero[];
     selectedHero: Hero;
 
@@ -25,6 +25,12 @@ export class HeroesComponent implements OnInit{
         private logger: Logger){
     }
 
+    ngOnChanges(): void{
+        console.log('here is ngOnChanges');
+    }
+    ngOnDestroy(): void{
+            console.log('here is ngOnDestroy');
+    }
     onSelect(hero: Hero): void{
         this.selectedHero = hero;
     }
@@ -33,6 +39,7 @@ export class HeroesComponent implements OnInit{
         this.logger.log('getting heroes……');
     }
     ngOnInit(): void{
+        console.log('here is ngOnInit');
         this.getHeroes();
     }
     gotoDetail(): void{
@@ -56,6 +63,11 @@ export class HeroesComponent implements OnInit{
                 this.heroes.push(hero);
                 this.selectedHero = null;
             });
+    }
+    agreed:number=0;
+    disagreed:number=0;
+    onVoted(agreed:boolean){
+            agreed?this.agreed++:this.disagreed++;
     }
 }
 
