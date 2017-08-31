@@ -8,6 +8,7 @@ import { CrisisCenterComponent } from "../components/crisis/crisis-center.compon
 import {CrisisDetailComponent} from "../components/crisis/crisis-detail.component";
 import {CountdownParentComponent} from "../components/countdown/countdown-parent.component";
 import {CountdownParentComponent2} from "../components/countdown/countdown-parent.component2";
+import {MissioncontrolComponent} from "../components/communicate-service/missioncontrol.component";
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
     { path: 'crisis', component: CrisisCenterComponent},
     { path: 'crisis-detail/:id', component: CrisisDetailComponent},
     { path: 'countdown', component: CountdownParentComponent},
-    { path: 'countdown2', component: CountdownParentComponent2}
+    { path: 'countdown2', component: CountdownParentComponent2},
+    { path: 'astronaut-mission', component: MissioncontrolComponent}
 ];
 
 @NgModule({

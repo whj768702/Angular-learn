@@ -22,6 +22,9 @@ import {CrisisDetailComponent} from "./components/crisis/crisis-detail.component
 import { CountdownParentComponent } from "./components/countdown/countdown-parent.component";
 import { CountdownTimerComponent} from "./components/countdown/countdown-timer.component";
 import {CountdownParentComponent2} from "./components/countdown/countdown-parent.component2";
+import {AstronautComponent} from "./components/communicate-service/astronaut.component";
+import {MissioncontrolComponent} from "./components/communicate-service/missioncontrol.component";
+import {MissionService} from "./services/mission.service";
 
 @NgModule({
     imports: [
@@ -41,9 +44,11 @@ import {CountdownParentComponent2} from "./components/countdown/countdown-parent
         CrisisDetailComponent,
         CountdownParentComponent,
         CountdownTimerComponent,
-        CountdownParentComponent2
+        CountdownParentComponent2,
+        AstronautComponent,
+        MissioncontrolComponent
     ],
-    providers: [ HeroService ],
+    providers: [ HeroService, MissionService ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule implements OnInit{
