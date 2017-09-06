@@ -25,6 +25,7 @@ import {CountdownParentComponent2} from "./components/countdown/countdown-parent
 import {AstronautComponent} from "./components/communicate-service/astronaut.component";
 import {MissioncontrolComponent} from "./components/communicate-service/missioncontrol.component";
 import {MissionService} from "./services/mission.service";
+import {HighlightDirective} from "./components/attribute-directives/highlight.directive";
 
 @NgModule({
     imports: [
@@ -46,7 +47,8 @@ import {MissionService} from "./services/mission.service";
         CountdownTimerComponent,
         CountdownParentComponent2,
         AstronautComponent,
-        MissioncontrolComponent
+        MissioncontrolComponent,
+        HighlightDirective
     ],
     providers: [ HeroService, MissionService ],
     bootstrap: [ AppComponent ]

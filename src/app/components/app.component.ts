@@ -10,5 +10,6 @@ import '../../../public/css/styles.css';
 })
 
 export class AppComponent{
+    color = 'yellow';
     title: string = 'Tour of Heroes';
 }
