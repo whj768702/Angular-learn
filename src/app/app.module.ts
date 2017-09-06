@@ -26,6 +26,7 @@ import {AstronautComponent} from "./components/communicate-service/astronaut.com
 import {MissioncontrolComponent} from "./components/communicate-service/missioncontrol.component";
 import {MissionService} from "./services/mission.service";
 import {HighlightDirective} from "./components/attribute-directives/highlight.directive";
+import {HighlightDisplayComponent} from "./components/attribute-directives/highlight-display.component";
 
 @NgModule({
     imports: [
@@ -48,6 +49,7 @@ import {HighlightDirective} from "./components/attribute-directives/highlight.di
         CountdownParentComponent2,
         AstronautComponent,
         MissioncontrolComponent,
+        HighlightDisplayComponent,
         HighlightDirective
     ],
     providers: [ HeroService, MissionService ],
