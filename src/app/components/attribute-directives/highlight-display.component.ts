@@ -1,5 +1,4 @@
-import { Component, ElementRef }from '@angular/core';
-import {HighlightDirective} from "./highlight.directive";
+import { Component }from '@angular/core';
 
 @Component({
     selector: 'show-highlight',
