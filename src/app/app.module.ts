@@ -27,6 +27,8 @@ import {MissioncontrolComponent} from "./components/communicate-service/missionc
 import {MissionService} from "./services/mission.service";
 import {HighlightDirective} from "./components/attribute-directives/highlight.directive";
 import {HighlightDisplayComponent} from "./components/attribute-directives/highlight-display.component";
+import {UnlessDirective} from "./components/structural-directive/unless.directive";
+import {MyUnlessComponent} from "./components/structural-directive/myUnless.component";
 
 @NgModule({
     imports: [
@@ -50,7 +52,9 @@ import {HighlightDisplayComponent} from "./components/attribute-directives/highl
         AstronautComponent,
         MissioncontrolComponent,
         HighlightDisplayComponent,
-        HighlightDirective
+        HighlightDirective,
+        MyUnlessComponent,
+        UnlessDirective
     ],
     providers: [ HeroService, MissionService ],
     bootstrap: [ AppComponent ]
