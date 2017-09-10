@@ -27,6 +27,9 @@ import {MissioncontrolComponent} from "./components/communicate-service/missionc
 import {MissionService} from "./services/mission.service";
 import {HighlightDirective} from "./components/attribute-directives/highlight.directive";
 import {HighlightDisplayComponent} from "./components/attribute-directives/highlight-display.component";
+import {topBarComponent} from "./components/top-bar/top-bar.component";
+import {sideBarComponent} from "./components/side-bar/side-bar.component";
+import {contentComponent} from "./components/content-wrapper/content.component";
 import {UnlessDirective} from "./components/structural-directive/unless.directive";
 import {MyUnlessComponent} from "./components/structural-directive/myUnless.component";
 
@@ -54,7 +57,11 @@ import {MyUnlessComponent} from "./components/structural-directive/myUnless.comp
         HighlightDisplayComponent,
         HighlightDirective,
         MyUnlessComponent,
-        UnlessDirective
+        UnlessDirective,
+        HighlightDirective,
+        topBarComponent,
+        sideBarComponent,
+        contentComponent
     ],
     providers: [ HeroService, MissionService ],
     bootstrap: [ AppComponent ]
