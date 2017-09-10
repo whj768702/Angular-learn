@@ -27,6 +27,9 @@ import {MissioncontrolComponent} from "./components/communicate-service/missionc
 import {MissionService} from "./services/mission.service";
 import {HighlightDirective} from "./components/attribute-directives/highlight.directive";
 import {HighlightDisplayComponent} from "./components/attribute-directives/highlight-display.component";
+import {topBarComponent} from "./components/top-bar/top-bar.component";
+import {sideBarComponent} from "./components/side-bar/side-bar.component";
+import {contentComponent} from "./components/content-wrapper/content.component";
 
 @NgModule({
     imports: [
@@ -50,7 +53,10 @@ import {HighlightDisplayComponent} from "./components/attribute-directives/highl
         AstronautComponent,
         MissioncontrolComponent,
         HighlightDisplayComponent,
-        HighlightDirective
+        HighlightDirective,
+        topBarComponent,
+        sideBarComponent,
+        contentComponent
     ],
     providers: [ HeroService, MissionService ],
     bootstrap: [ AppComponent ]
