@@ -1,6 +1,18 @@
-div {
+.viewFramework-sidebar-full .viewFramework-sidebar{
+    width: 180px;
+    display: block;
+}
+.viewFramework-sidebar-full .viewFramework-product{
+    left: 180px;
+}
+.viewFramework-product {
     position: absolute;
-    left:40px;
+    width: auto;
+    top: 50px;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    left: 180px;
 }
 h1 {
     font-size: 1.2em;
