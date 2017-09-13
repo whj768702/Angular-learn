@@ -10,3 +10,6 @@
     z-index: 102;
     overflow-x: hidden;
 }
+.small{
+    width: 100px;
+}
