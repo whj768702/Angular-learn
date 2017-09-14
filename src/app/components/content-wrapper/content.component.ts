@@ -1,12 +1,11 @@
-import { Component, ViewChild, OnInit} from '@angular/core';
-import {sideBarComponent} from "../side-bar/side-bar.component";
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'sg-content-wrapper',
     template: `
         <div class="viewFramework-body viewFramework-sidebar-full">
             <sg-side-bar #changeSideBar></sg-side-bar>
-            <div class="viewFramework-product" [ngClass]="{'small':sideBar}">
+            <div class="viewFramework-product" [ngClass]="{'small':changeSideBar.isOpenSideBar}">
                 <h1>{{title}}</h1>
                 <nav>
                     <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
@@ -24,14 +23,6 @@ import {sideBarComponent} from "../side-bar/side-bar.component";
     styleUrls: ['./content.component.css']
 })
 
-export class contentComponent  implements OnInit {
+export class contentComponent {
     color = 'yellow';
-    sideBar: boolean = true;
-    @ViewChild(sideBarComponent)
-    private contentState: sideBarComponent;
-
-    ngOnInit(): void{
-        this.sideBar=this.contentState.sideBarState();
-    }
-
 }
