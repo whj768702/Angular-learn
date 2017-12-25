@@ -32,6 +32,8 @@ import {sideBarComponent} from "./components/side-bar/side-bar.component";
 import {contentComponent} from "./components/content-wrapper/content.component";
 import {UnlessDirective} from "./components/structural-directive/unless.directive";
 import {MyUnlessComponent} from "./components/structural-directive/myUnless.component";
+import {lifecycleHookToNodeFlag} from '@angular/compiler/src/view_compiler/provider_compiler';
+import {LifecycleHooksComponent} from './components/lifecycle-hooks/lifecycle-hooks';
 
 @NgModule({
     imports: [
@@ -61,7 +63,8 @@ import {MyUnlessComponent} from "./components/structural-directive/myUnless.comp
         HighlightDirective,
         topBarComponent,
         sideBarComponent,
-        contentComponent
+        contentComponent,
+        LifecycleHooksComponent
     ],
     providers: [ HeroService, MissionService ],
     bootstrap: [ AppComponent ]

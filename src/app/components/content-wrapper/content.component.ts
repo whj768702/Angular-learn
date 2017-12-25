@@ -15,6 +15,7 @@ import { Component } from '@angular/core';
                     <a routerLink="/countdown2" routerLinkActive="active">countdown ViewChild</a>
                     <a routerLink="/astronaut-mission" routerLinkActive="active">communicate via a service</a>
                     <a routerLink="/show-highlight" routerLinkActive="active">highlight</a>
+                    <a routerLink="/lifecycle-hooks" routerLinkActive="active">声明周期钩子</a>
                 </nav>
                 <router-outlet></router-outlet> 
             </div>
