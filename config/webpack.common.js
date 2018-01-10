@@ -1,3 +1,4 @@
+"use strict";
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -21,7 +22,7 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader?id=ts', 'angular2-template-loader?id=ts']
+                loaders: ['awesome-typescript-loader?id=ts', 'angular-router-loader', 'angular2-template-loader?id=ts']
             },
             {
                 test: /\.html$/,
@@ -60,8 +61,17 @@ module.exports = {
         new Happypack({
             id: 'ts',
             threadPool: HappypackThreadPool,
-            loaders:['awesome-typescript-loader', 'angular2-template-loader']
+            loaders:['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader']
 
+        }),
+
+        new Happypack({
+            id: 'happyTS',
+            threadPool: HappypackThreadPool,
+            loaders: [{
+                path: 'ts-loader',
+                query: { happyPackMode: true}
+            }]
         })
     ]
 };

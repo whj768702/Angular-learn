@@ -1,4 +1,4 @@
-import { NgModule }             from '@angular/core';
+import {ModuleWithProviders} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent }   from '../components/dashboard/dashboard.component';
@@ -25,12 +25,16 @@ const routes: Routes = [
     { path: 'astronaut-mission', component: MissioncontrolComponent},
     { path: 'show-highlight', component: HighlightDisplayComponent},
     { path: 'structural-directive', component: MyUnlessComponent},
-    { path: 'lifecycle-hooks', component: LifecycleHooksComponent}
+    { path: 'lifecycle-hooks', component: LifecycleHooksComponent},
+    { path: 'template',
+        loadChildren: '../components/template/template.module#TemplateModule'
+    }
 ];
 
-@NgModule({
-    imports: [ RouterModule.forRoot(routes) ],
-    exports: [ RouterModule ]
-})
-
-export class AppRoutingModule {}
+// @NgModule({
+//     imports: [ RouterModule.forRoot(routes) ],
+//     exports: [ RouterModule ]
+// })
+//
+// export class AppRoutingModule {}
+export const appRouting: ModuleWithProviders = RouterModule.forRoot(routes);

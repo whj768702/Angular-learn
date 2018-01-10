@@ -9,7 +9,7 @@ import { AppComponent } from "./components/app.component";
 import { HeroService } from "./services/hero.service";
 
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
-import { AppRoutingModule } from "./router/app-routing.module";
+import {appRouting} from "./router/app-routing.module";
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
@@ -32,15 +32,18 @@ import {sideBarComponent} from "./components/side-bar/side-bar.component";
 import {contentComponent} from "./components/content-wrapper/content.component";
 import {UnlessDirective} from "./components/structural-directive/unless.directive";
 import {MyUnlessComponent} from "./components/structural-directive/myUnless.component";
-import {lifecycleHookToNodeFlag} from '@angular/compiler/src/view_compiler/provider_compiler';
 import {LifecycleHooksComponent} from './components/lifecycle-hooks/lifecycle-hooks';
 import {OnChangesComponent} from './components/lifecycle-hooks/OnChanges/onchanges.component';
+import {TemplateModule} from './components/template/template.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
     imports: [
+        RouterModule,
+        TemplateModule,
         BrowserModule,
         FormsModule,
-        AppRoutingModule,
+        appRouting,
         HttpModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService)
     ],

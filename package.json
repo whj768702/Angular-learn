@@ -31,13 +31,16 @@
     "happypack": "^4.0.0",
     "rxjs": "^5.5.6",
     "typescript": "^2.6.2",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "ts-loader": "^3.2.0",
+    "ng-router-loader": "^2.1.0"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.44",
     "@types/jasmine": "^2.8.3",
     "angular-in-memory-web-api": "^0.5.2",
     "angular2-template-loader": "^0.6.2",
+    "angular-router-loader": "^0.8.2",
     "bootstrap": "^3.3.7",
     "codelyzer": "^4.0.2",
     "css-loader": "^0.28.8",
