@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
                     <a routerLink="/astronaut-mission" routerLinkActive="active">communicate via a service</a>
                     <a routerLink="/show-highlight" routerLinkActive="active">highlight</a>
                     <a routerLink="/lifecycle-hooks" routerLinkActive="active">生命周期钩子</a>
-                    <a routerLink="/template" routerLinkActive="active">template</a>
+                    <a routerLink="/template" routerLinkActive="active">特性模块</a>
                 </nav>
                 <router-outlet></router-outlet> 
             </div>
