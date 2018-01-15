@@ -1,4 +1,4 @@
-import {ModuleWithProviders} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent }   from '../components/dashboard/dashboard.component';
@@ -12,6 +12,7 @@ import {MissioncontrolComponent} from "../components/communicate-service/mission
 import {HighlightDisplayComponent} from "../components/attribute-directives/highlight-display.component";
 import {MyUnlessComponent} from "../components/structural-directive/myUnless.component";
 import {LifecycleHooksComponent} from '../components/lifecycle-hooks/lifecycle-hooks';
+import {FeatureModulesModule} from '../components/featureModules/featureModules.module';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -27,14 +28,14 @@ const routes: Routes = [
     { path: 'structural-directive', component: MyUnlessComponent},
     { path: 'lifecycle-hooks', component: LifecycleHooksComponent},
     { path: 'template',
-        loadChildren: '../components/template/template.module#TemplateModule'
+        loadChildren: '../components/featureModules/featureModules.module#FeatureModulesModule'
     }
 ];
 
-// @NgModule({
-//     imports: [ RouterModule.forRoot(routes) ],
-//     exports: [ RouterModule ]
-// })
-//
-// export class AppRoutingModule {}
-export const appRouting: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+    imports: [ RouterModule.forRoot(routes) ],
+    exports: [ RouterModule ]
+})
+
+export class AppRoutingModule {}
+// export const appRouting: ModuleWithProviders = RouterModule.forRoot(routes);
