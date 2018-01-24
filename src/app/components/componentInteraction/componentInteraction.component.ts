@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'component-interaction',
-    templateUrl: './componentInteraction.html'
+    templateUrl: './componentInteraction.html',
+    styleUrls: ['./componentInteraction.css']
 })
 
 export class ComponentInteractionComponent{

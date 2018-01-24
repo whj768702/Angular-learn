@@ -1,0 +1,8 @@
+.component-interaction{
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 1px solid #039be5;
+}
+.component-interaction .content{
+    margin: 20px;
+}
