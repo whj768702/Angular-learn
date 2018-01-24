@@ -19,9 +19,6 @@ import { HeroSearchComponent } from "./components/hero/hero-search.component";
 import { CrisisCenterComponent } from "./components/crisis/crisis-center.component";
 import {CrisisDetailComponent} from "./components/crisis/crisis-detail.component";
 
-import { CountdownParentComponent } from "./components/countdown/countdown-parent.component";
-import { CountdownTimerComponent} from "./components/countdown/countdown-timer.component";
-import {CountdownParentComponent2} from "./components/countdown/countdown-parent.component2";
 import {AstronautComponent} from "./components/communicate-service/astronaut.component";
 import {MissioncontrolComponent} from "./components/communicate-service/missioncontrol.component";
 import {MissionService} from "./services/mission.service";
@@ -36,6 +33,7 @@ import {LifecycleHooksComponent} from './components/lifecycle-hooks/lifecycle-ho
 import {OnChangesComponent} from './components/lifecycle-hooks/OnChanges/onchanges.component';
 import {RouterModule} from '@angular/router';
 import {FeatureModulesModule} from './components/featureModules/featureModules.module';
+import {ComponentInteractionModule} from './components/componentInteraction/componentInteraction.module';
 
 @NgModule({
     imports: [
@@ -44,6 +42,7 @@ import {FeatureModulesModule} from './components/featureModules/featureModules.m
         HttpModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService),
         FeatureModulesModule,
+        ComponentInteractionModule,
         RouterModule,
         AppRoutingModule
     ],
@@ -55,9 +54,6 @@ import {FeatureModulesModule} from './components/featureModules/featureModules.m
         HeroSearchComponent,
         CrisisCenterComponent,
         CrisisDetailComponent,
-        CountdownParentComponent,
-        CountdownTimerComponent,
-        CountdownParentComponent2,
         AstronautComponent,
         MissioncontrolComponent,
         HighlightDisplayComponent,
