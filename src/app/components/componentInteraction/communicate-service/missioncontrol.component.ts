@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MissionService} from "../../services/mission.service";
+import {MissionService} from "../../../services/mission.service";
 
 @Component({
     selector: 'mission-control',

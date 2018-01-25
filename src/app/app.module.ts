@@ -19,8 +19,6 @@ import { HeroSearchComponent } from "./components/hero/hero-search.component";
 import { CrisisCenterComponent } from "./components/crisis/crisis-center.component";
 import {CrisisDetailComponent} from "./components/crisis/crisis-detail.component";
 
-import {AstronautComponent} from "./components/communicate-service/astronaut.component";
-import {MissioncontrolComponent} from "./components/communicate-service/missioncontrol.component";
 import {MissionService} from "./services/mission.service";
 import {HighlightDirective} from "./components/attribute-directives/highlight.directive";
 import {HighlightDisplayComponent} from "./components/attribute-directives/highlight-display.component";
@@ -54,8 +52,6 @@ import {ComponentInteractionModule} from './components/componentInteraction/comp
         HeroSearchComponent,
         CrisisCenterComponent,
         CrisisDetailComponent,
-        AstronautComponent,
-        MissioncontrolComponent,
         HighlightDisplayComponent,
         HighlightDirective,
         MyUnlessComponent,

@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-import { MissionService } from "../../services/mission.service";
+import { MissionService } from "../../../services/mission.service";
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
