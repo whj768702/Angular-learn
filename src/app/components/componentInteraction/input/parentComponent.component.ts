@@ -10,6 +10,11 @@ import {Component} from '@angular/core';
                 <span>引用子组件</span>
                 <child-component [fromDad]="dadData"></child-component>
             </div>
+            <br>
+            <div>
+                <span>通过set截听输入属性值的变化</span>
+                <child-component-value-set [fromData]="dadData"></child-component-value-set>
+            </div>
         </div>
     `
 })

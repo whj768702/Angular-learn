@@ -5,6 +5,7 @@ import {CountdownParentComponent2} from './countdown/countdown-parent.component2
 import {NgModule} from '@angular/core';
 import {MissioncontrolComponent} from './communicate-service/missioncontrol.component';
 import {ParentComponentComponent} from './input/parentComponent.component';
+import {ChildComponentSetComponent} from './input/childComponent-set.component';
 
 const routes: Routes = [
     {
@@ -12,6 +13,7 @@ const routes: Routes = [
         component: ComponentInteractionComponent,
         children: [
             {path: 'input', component: ParentComponentComponent},
+            {path: 'input-set', component: ChildComponentSetComponent},
             {path: 'localVariable', component: CountdownParentComponent},
             {path: 'viewChild', component: CountdownParentComponent2},
             {path: 'service', component: MissioncontrolComponent}

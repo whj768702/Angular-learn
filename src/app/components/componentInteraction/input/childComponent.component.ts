@@ -4,7 +4,8 @@ import {Component, Input} from '@angular/core';
     selector: 'child-component',
     template: `
         <div>
-            <h4>这是子组件</h4>
+            <span>这是子组件,通过Input获取父组件值</span>
+            <br>
             <span>{{fromDad}}</span>
         </div>
     `

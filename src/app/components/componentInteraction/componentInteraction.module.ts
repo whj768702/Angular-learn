@@ -10,6 +10,7 @@ import {CommonModule} from '@angular/common';
 import {ParentComponentComponent} from './input/parentComponent.component';
 import {ChildComponentComponent} from './input/childComponent.component';
 import {FormsModule} from '@angular/forms';
+import {ChildComponentSetComponent} from './input/childComponent-set.component';
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import {FormsModule} from '@angular/forms';
     declarations: [
         ParentComponentComponent,
         ChildComponentComponent,
+        ChildComponentSetComponent,
         CountdownParentComponent,
         CountdownParentComponent2,
         CountdownTimerComponent,
