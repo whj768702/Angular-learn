@@ -7,13 +7,19 @@ import {ComponentInteractionComponent} from './componentInteraction.component';
 import {AstronautComponent} from './communicate-service/astronaut.component';
 import {MissioncontrolComponent} from './communicate-service/missioncontrol.component';
 import {CommonModule} from '@angular/common';
+import {ParentComponentComponent} from './input/parentComponent.component';
+import {ChildComponentComponent} from './input/childComponent.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         ComponentInteractionRouting
     ],
     declarations: [
+        ParentComponentComponent,
+        ChildComponentComponent,
         CountdownParentComponent,
         CountdownParentComponent2,
         CountdownTimerComponent,
