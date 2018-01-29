@@ -13,6 +13,8 @@ import {FormsModule} from '@angular/forms';
 import {ChildComponentSetComponent} from './input/childComponent-set.component';
 import {ParentComponentOnChangesComponent} from './OnChanges/parentComponent.component';
 import {ChildComponentOnChangesComponent} from './OnChanges/childComponent.component';
+import {ParentListenComponent} from './child-event/parentListen.component';
+import {ChildSendComponent} from './child-event/childSend.component';
 
 @NgModule({
     imports: [
@@ -31,7 +33,9 @@ import {ChildComponentOnChangesComponent} from './OnChanges/childComponent.compo
         MissioncontrolComponent,
         ComponentInteractionComponent,
         ParentComponentOnChangesComponent,
-        ChildComponentOnChangesComponent
+        ChildComponentOnChangesComponent,
+        ParentListenComponent,
+        ChildSendComponent
     ]
 })
 export class ComponentInteractionModule{}
