@@ -11,6 +11,8 @@ import {ParentComponentComponent} from './input/parentComponent.component';
 import {ChildComponentComponent} from './input/childComponent.component';
 import {FormsModule} from '@angular/forms';
 import {ChildComponentSetComponent} from './input/childComponent-set.component';
+import {ParentComponentOnChangesComponent} from './OnChanges/parentComponent.component';
+import {ChildComponentOnChangesComponent} from './OnChanges/childComponent.component';
 
 @NgModule({
     imports: [
@@ -27,7 +29,9 @@ import {ChildComponentSetComponent} from './input/childComponent-set.component';
         CountdownTimerComponent,
         AstronautComponent,
         MissioncontrolComponent,
-        ComponentInteractionComponent
+        ComponentInteractionComponent,
+        ParentComponentOnChangesComponent,
+        ChildComponentOnChangesComponent
     ]
 })
 export class ComponentInteractionModule{}

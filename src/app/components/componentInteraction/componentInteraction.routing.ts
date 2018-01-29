@@ -6,6 +6,7 @@ import {NgModule} from '@angular/core';
 import {MissioncontrolComponent} from './communicate-service/missioncontrol.component';
 import {ParentComponentComponent} from './input/parentComponent.component';
 import {ChildComponentSetComponent} from './input/childComponent-set.component';
+import {ParentComponentOnChangesComponent} from './OnChanges/parentComponent.component';
 
 const routes: Routes = [
     {
@@ -16,7 +17,8 @@ const routes: Routes = [
             {path: 'input-set', component: ChildComponentSetComponent},
             {path: 'localVariable', component: CountdownParentComponent},
             {path: 'viewChild', component: CountdownParentComponent2},
-            {path: 'service', component: MissioncontrolComponent}
+            {path: 'service', component: MissioncontrolComponent},
+            {path: 'onChanges', component: ParentComponentOnChangesComponent}
         ]
     }
 ];
