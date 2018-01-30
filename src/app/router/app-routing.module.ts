@@ -25,6 +25,9 @@ const routes: Routes = [
     },
     { path: 'component-interaction',
         loadChildren: '../components/componentInteraction/componentInteraction.module#ComponentInteractionModule'
+    },
+    { path: 'dynamic-component-loading',
+        loadChildren: '../components/dynamicComponentLoading/dynamicComponent.module#DynamicComponentModule'
     }
 ];
 

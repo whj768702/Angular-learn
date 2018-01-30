@@ -32,6 +32,7 @@ import {OnChangesComponent} from './components/lifecycle-hooks/OnChanges/onchang
 import {RouterModule} from '@angular/router';
 import {FeatureModulesModule} from './components/featureModules/featureModules.module';
 import {ComponentInteractionModule} from './components/componentInteraction/componentInteraction.module';
+import {DynamicComponentModule} from './components/dynamicComponentLoading/dynamicComponent.module';
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import {ComponentInteractionModule} from './components/componentInteraction/comp
         InMemoryWebApiModule.forRoot(InMemoryDataService),
         FeatureModulesModule,
         ComponentInteractionModule,
+        DynamicComponentModule,
         RouterModule,
         AppRoutingModule
     ],

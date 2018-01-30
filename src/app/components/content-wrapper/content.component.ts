@@ -15,6 +15,7 @@ import { Component } from '@angular/core';
                     <a routerLink="/lifecycle-hooks" routerLinkActive="active">生命周期钩子</a>
                     <a routerLink="/component-interaction" routerLinkActive="action">组件交互</a>
                     <a routerLink="/template" routerLinkActive="active">特性模块</a>
+                    <a routerLink="/dynamic-component-loading" routerLinkActive="active">动态组件</a>
                 </nav>
                 <router-outlet></router-outlet> 
             </div>
