@@ -16,6 +16,8 @@ import {ChildComponentOnChangesComponent} from './OnChanges/childComponent.compo
 import {ParentListenComponent} from './child-event/parentListen.component';
 import {ChildSendComponent} from './child-event/childSend.component';
 import {ChildSendStringComponent} from './child-event/childSendString.component';
+import {EventService} from './child-event/event.service';
+import {ChildEventComponent} from './child-event/childEvent.component';
 
 @NgModule({
     imports: [
@@ -37,7 +39,9 @@ import {ChildSendStringComponent} from './child-event/childSendString.component'
         ChildComponentOnChangesComponent,
         ParentListenComponent,
         ChildSendComponent,
-        ChildSendStringComponent
-    ]
+        ChildSendStringComponent,
+        ChildEventComponent
+    ],
+    providers: [EventService]
 })
 export class ComponentInteractionModule{}
