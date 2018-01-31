@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from '@angular/core';
+import {Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {OneComponent} from './components/one.component';
 import {DynamicComponentDirective} from './dynamicComponent.directive';
 import {TwoComponent} from './components/two.component';
@@ -11,18 +11,18 @@ import {TwoComponent} from './components/two.component';
     `
 })
 
-export class DynamicComponentComponent implements AfterViewInit, OnDestroy{
+export class DynamicComponentComponent implements OnDestroy, OnInit{
     @ViewChild(DynamicComponentDirective) componentHost: DynamicComponentDirective;
 
     currentIndex: number = 1;
     interval: any;
     components = [
-        {component: OneComponent},
-        {component: TwoComponent}
+        {component: OneComponent, data: 'one'},
+        {component: TwoComponent, data: 'two'}
     ];
     constructor(private componentFactoryResolver: ComponentFactoryResolver){}
 
-    ngAfterViewInit() {
+    ngOnInit(){
         this.loadComponent();
         this.getAds();
     }
@@ -41,6 +41,7 @@ export class DynamicComponentComponent implements AfterViewInit, OnDestroy{
         viewContainerRef.clear();
 
         let componentRef = viewContainerRef.createComponent(componentFactory);
+        componentRef.instance.data = adItem.data;
     }
 
     getAds() {
