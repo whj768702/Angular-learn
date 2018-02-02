@@ -53,8 +53,8 @@ export class HeroDetailComponent implements OnInit{
     }
 
     save(): void{
-            this.heroService.update(this.hero)
-                .then(() => this.goBack());
+            this.heroService.updateHero(this.hero)
+                .subscribe(() => this.goBack());
     }
     deleteHero(value:any):void{
         console.log(value);

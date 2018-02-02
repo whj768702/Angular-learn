@@ -35,7 +35,7 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy{
         this.selectedHero = hero;
     }
     getHeroes(): void{
-        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+        this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
         this.logger.log('getting heroes……');
     }
     ngOnInit(): void{
@@ -47,19 +47,16 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy{
     }
 
     delete(hero: Hero): void {
+        this.heroes = this.heroes.filter(h => h !== hero);
         this.heroService
-            .delete(hero.id)
-            .then(() => {
-                this.heroes = this.heroes.filter(h => h !== hero);
-                if (this.selectedHero === hero) { this.selectedHero = null; }
-            });
+            .deleteHero(hero.id).subscribe();
     }
 
     add(name: string): void {
         name = name.trim();
         if (!name) { return; }
-        this.heroService.create(name)
-            .then(hero => {
+        this.heroService.addHero({name} as Hero)
+            .subscribe(hero => {
                 this.heroes.push(hero);
                 this.selectedHero = null;
             });

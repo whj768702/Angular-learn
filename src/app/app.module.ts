@@ -1,7 +1,6 @@
 import {NgModule, OnInit} from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { HeroesComponent } from './components/hero/heroes.component';
 import { HeroDetailComponent } from './components/hero/hero-detail.component';
@@ -33,12 +32,13 @@ import {RouterModule} from '@angular/router';
 import {FeatureModulesModule} from './components/featureModules/featureModules.module';
 import {ComponentInteractionModule} from './components/componentInteraction/componentInteraction.module';
 import {DynamicComponentModule} from './components/dynamicComponentLoading/dynamicComponent.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService),
         FeatureModulesModule,
         ComponentInteractionModule,
