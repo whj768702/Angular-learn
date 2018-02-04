@@ -33,6 +33,8 @@ import {FeatureModulesModule} from './components/featureModules/featureModules.m
 import {ComponentInteractionModule} from './components/componentInteraction/componentInteraction.module';
 import {DynamicComponentModule} from './components/dynamicComponentLoading/dynamicComponent.module';
 import {HttpClientModule} from '@angular/common/http';
+import {PipeComponent} from "./components/pipes/pipe.component";
+import {NumberPipe} from "./components/pipes/number.pipe";
 
 @NgModule({
     imports: [
@@ -63,7 +65,9 @@ import {HttpClientModule} from '@angular/common/http';
         sideBarComponent,
         contentComponent,
         LifecycleHooksComponent,
-        OnChangesComponent
+        OnChangesComponent,
+        PipeComponent,
+        NumberPipe
     ],
     providers: [ HeroService, MissionService ],
     bootstrap: [ AppComponent ]

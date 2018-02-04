@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
                     <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
                     <a routerLink="/crisis" routerLinkActive="active">Crisis Center</a>
                     <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+                    <a routerLink="/pipe" routerLinkActive="active">pipe管道</a>
                     <a routerLink="/show-highlight" routerLinkActive="active">highlight</a>
                     <a routerLink="/lifecycle-hooks" routerLinkActive="active">生命周期钩子</a>
                     <a routerLink="/component-interaction" routerLinkActive="action">组件交互</a>

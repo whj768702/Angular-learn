@@ -9,6 +9,7 @@ import {CrisisDetailComponent} from "../components/crisis/crisis-detail.componen
 import {HighlightDisplayComponent} from "../components/attribute-directives/highlight-display.component";
 import {MyUnlessComponent} from "../components/structural-directive/myUnless.component";
 import {LifecycleHooksComponent} from '../components/lifecycle-hooks/lifecycle-hooks';
+import {PipeComponent} from "../components/pipes/pipe.component";
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: 'show-highlight', component: HighlightDisplayComponent},
     { path: 'structural-directive', component: MyUnlessComponent},
     { path: 'lifecycle-hooks', component: LifecycleHooksComponent},
+    { path: 'pipe', component: PipeComponent},
     { path: 'template',
         loadChildren: '../components/featureModules/featureModules.module#FeatureModulesModule'
     },
