@@ -45,11 +45,13 @@ module.exports = {
         ]
     },
 
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        },
+        runtimeChunk: true
+    },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills']
-        }),
-
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
