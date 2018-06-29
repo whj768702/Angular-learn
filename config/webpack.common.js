@@ -5,9 +5,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 var openBrowserPlugin = require('open-browser-webpack-plugin');
 var Happypack = require('happypack');
-var HappypackThreadPool = Happypack.ThreadPool({size:8});
+var HappypackThreadPool = Happypack.ThreadPool({size: 8});
 
 module.exports = {
+    mode: 'production',
+
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
@@ -52,6 +54,11 @@ module.exports = {
         runtimeChunk: true
     },
     plugins: [
+        new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)fesm5/,
+            helpers.root('./src'),
+            {}
+        ),
+
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
@@ -63,7 +70,7 @@ module.exports = {
         new Happypack({
             id: 'ts',
             threadPool: HappypackThreadPool,
-            loaders:['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader']
+            loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader']
 
         }),
 
@@ -72,7 +79,7 @@ module.exports = {
             threadPool: HappypackThreadPool,
             loaders: [{
                 path: 'ts-loader',
-                query: { happyPackMode: true}
+                query: {happyPackMode: true}
             }]
         })
     ]
