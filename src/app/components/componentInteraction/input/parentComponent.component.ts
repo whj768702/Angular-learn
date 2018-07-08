@@ -5,10 +5,9 @@ import {Component} from '@angular/core';
     template: `
         <div>
             <h3>这是父组件</h3>
-            <input type="text" [(ngModel)]="dadData.test.test.test">
+            <input type="text" [(ngModel)]="dadData">
             <div>
-                <span>引用子组件</span>
-                <child-component [fromDad]="dadData.test.test.test"></child-component>
+                <child-component [fromDad]="dadData" [renamed]="dadData"></child-component>
             </div>
             <br>
             <div>
@@ -20,12 +19,5 @@ import {Component} from '@angular/core';
 })
 
 export class ParentComponentComponent{
-    dadData = {
-        test: {
-            test: {
-                test: '来自父组件的数据'
-            }
-        }
-    };
-    // dadData = '来自父组件的数据';
+    dadData = '父组件';
 }
