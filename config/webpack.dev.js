@@ -1,8 +1,9 @@
-var webpackMerge = require('webpack-merge');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var commonConfig = require('./webpack.common.js');
-var helpers = require('./helpers');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpackMerge = require('webpack-merge');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const commonConfig = require('./webpack.common.js');
+const helpers = require('./helpers');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack');
 
 module.exports = webpackMerge(commonConfig, {
     devtool: 'cheap-module-eval-source-map',
@@ -16,11 +17,16 @@ module.exports = webpackMerge(commonConfig, {
 
     plugins: [
         new ExtractTextPlugin('[name].css'),
-        new BundleAnalyzerPlugin()
+        new BundleAnalyzerPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ],
 
     devServer: {
+        publicPath: '/',
+        contentBase: './',
         historyApiFallback: true,
-        stats: 'minimal'
+        stats: 'minimal',
+        hot: true,
+        inline: true
     }
 });

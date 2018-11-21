@@ -1,3 +1,4 @@
 export class Menu{
-    name: string
+    name: string;
+    router: string;
 }

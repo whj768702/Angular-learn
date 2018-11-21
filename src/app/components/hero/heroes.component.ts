@@ -1,49 +1,52 @@
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnChanges, OnDestroy} from '@angular/core';
 
 import {Hero} from "../../hero";
 import {HeroService} from "../../services/hero.service";
 import {Router} from "@angular/router";
 import {Logger} from "../../services/logger.service";
 
-// import '../../public/css/styles.css';
-
 @Component({
-    // moduleId: module.id,
     selector: 'sg-my-heroes',
     templateUrl: './heroes.component.html',
     styleUrls: ['./heroes.component.css'],
     providers: [Logger]
 })
 
-export class HeroesComponent implements OnInit, OnChanges, OnDestroy{
+export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
     heroes: Hero[];
     selectedHero: Hero;
 
     constructor(
         private heroService: HeroService,
         private router: Router,
-        private logger: Logger){
+        private logger: Logger) {
     }
 
-    ngOnChanges(): void{
+    ngOnChanges(): void {
         console.log('here is ngOnChanges');
     }
-    ngOnDestroy(): void{
-            console.log('here is ngOnDestroy');
+
+    ngOnDestroy(): void {
+        console.log('here is ngOnDestroy');
     }
-    onSelect(hero: Hero): void{
+
+    onSelect(hero: Hero): void {
         this.selectedHero = hero;
     }
-    getHeroes(): void{
+
+    getHeroes(): void {
         this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
         this.logger.log('getting heroes……');
     }
-    ngOnInit(): void{
+
+    ngOnInit(): void {
         console.log('here is ngOnInit');
         this.getHeroes();
     }
-    gotoDetail(): void{
-        this.router.navigate(['/detail', this.selectedHero.id]);
+
+    gotoDetail() {
+        this.router.navigate(['/detail', this.selectedHero.id])
+            .then(result => console.log('navigate: ', result));
     }
 
     delete(hero: Hero): void {
@@ -54,17 +57,21 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy{
 
     add(name: string): void {
         name = name.trim();
-        if (!name) { return; }
+        if (!name) {
+            return;
+        }
         this.heroService.addHero({name} as Hero)
             .subscribe(hero => {
                 this.heroes.push(hero);
                 this.selectedHero = null;
             });
     }
-    agreed:number=0;
-    disagreed:number=0;
-    onVoted(agreed:boolean){
-            agreed?this.agreed++:this.disagreed++;
+
+    agreed: number = 0;
+    disagreed: number = 0;
+
+    onVoted(agreed: boolean) {
+        agreed ? this.agreed++ : this.disagreed++;
     }
 }
 
