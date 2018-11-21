@@ -1,11 +1,11 @@
 "use strict";
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
-var openBrowserPlugin = require('open-browser-webpack-plugin');
-var Happypack = require('happypack');
-var HappypackThreadPool = Happypack.ThreadPool({size: 8});
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const helpers = require('./helpers');
+const openBrowserPlugin = require('open-browser-webpack-plugin');
+const happyPack = require('happypack');
+const happyPackThreadPool = happyPack.ThreadPool({size: 8});
 
 module.exports = {
     mode: 'production',
@@ -67,16 +67,16 @@ module.exports = {
             url: 'http://localhost:8080'
         }),
 
-        new Happypack({
+        new happyPack({
             id: 'ts',
-            threadPool: HappypackThreadPool,
+            threadPool: happyPackThreadPool,
             loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader']
 
         }),
 
-        new Happypack({
+        new happyPack({
             id: 'happyTS',
-            threadPool: HappypackThreadPool,
+            threadPool: happyPackThreadPool,
             loaders: [{
                 path: 'ts-loader',
                 query: {happyPackMode: true}
