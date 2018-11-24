@@ -1,0 +1,8 @@
+<div class="viewFramework-sidebar-full viewFramework-sidebar" [ngClass]="{'small': isOpenSideBar}">
+    <button (click)="changeSideBar()">侧边栏</button>
+    <ul>
+        <li *ngFor="let item of menus">
+            <a style="color:red;" routerLink="/{{item.router}}">{{item.name}}</a>
+        </li>
+    </ul>
+</div>

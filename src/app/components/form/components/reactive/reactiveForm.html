@@ -1,0 +1,29 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>name:</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label>age:</label>
+        <input type="text" formControlName="age">
+    </div>
+    <div>
+        <label>weight:</label>
+        <input type="text" formControlName="weight">
+    </div>
+    <div>
+        <label>height:</label>
+        <input type="text" formControlName="height">
+    </div>
+    <div formGroupName="address">
+        <div>
+            <label>city:</label>
+            <input type="text" formControlName="city">
+        </div>
+        <div>
+            <label>phone:</label>
+            <input type="text" formControlName="phone">
+        </div>
+    </div>
+    <button type="submit" [disabled]="!profileForm.valid">确定</button>
+</form>

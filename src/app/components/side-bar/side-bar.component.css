@@ -1,0 +1,15 @@
+.viewFramework-sidebar-full{
+    width: 180px;
+    display: block;
+}
+.viewFramework-sidebar{
+    position: fixed;
+    top: 50px;
+    bottom: 0px;
+    background-color: #293038;
+    z-index: 102;
+    overflow-x: hidden;
+}
+.small{
+    width: 100px;
+}
