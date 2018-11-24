@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
   // moduleId: module.id,
   selector: 'sg-my-hero-detail',
   templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css']
+  styleUrls: ['./hero-detail.component.less']
 })
 
 export class HeroDetailComponent implements OnInit {
@@ -29,13 +29,13 @@ export class HeroDetailComponent implements OnInit {
 
   @Input() set id(value: any) {
     console.log(value);
-  };
+  }
 
-  @Output() onVote = new EventEmitter<boolean>();
-  voted: boolean = false;
+  @Output() myVote = new EventEmitter<boolean>();
+  voted = false;
 
   vote(argreed: boolean) {
-    this.onVote.emit(argreed);
+    this.myVote.emit(argreed);
     this.voted = true;
   }
 
@@ -60,18 +60,4 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.updateHero(this.hero)
       .subscribe(() => this.goBack());
   }
-
-  deleteHero(value: any): void {
-    console.log(value);
-  }
-
-  // add(name: string): void {
-  //     name = name.trim();
-  //     if (!name) { return; }
-  //     this.heroService.create(name)
-  //         .then(hero => {
-  //             this.heroes.push(hero);
-  //             this.selectedHero = null;
-  //         });
-  // }
 }

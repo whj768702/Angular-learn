@@ -6,7 +6,7 @@ import {HeroService} from '../../services/hero.service';
   // moduleId: module.id,
   selector: 'sg-my-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.less']
 })
 
 export class DashboardComponent implements OnInit {

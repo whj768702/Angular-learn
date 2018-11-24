@@ -5,7 +5,7 @@ import {Menu} from './menu';
 @Component({
   selector: 'sg-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css']
+  styleUrls: ['./side-bar.component.less']
 })
 export class SideBarComponent implements OnInit {
   menus: Menu[] = [

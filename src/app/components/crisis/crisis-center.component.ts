@@ -15,7 +15,7 @@ const Crises: Crisis[] = [
   selector: 'sg-crisis-center',
   // moduleId: module.id,
   templateUrl: 'crisis-center.component.html',
-  styleUrls: ['crisis-center.component.css']
+  styleUrls: ['crisis-center.component.less']
 })
 
 export class CrisisCenterComponent implements OnInit {

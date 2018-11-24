@@ -8,7 +8,7 @@ import {Logger} from '../../services/logger.service';
 @Component({
   selector: 'sg-my-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css'],
+  styleUrls: ['./heroes.component.less'],
   providers: [Logger]
 })
 

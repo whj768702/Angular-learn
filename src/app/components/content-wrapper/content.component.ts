@@ -11,7 +11,7 @@ import {Component} from '@angular/core';
       </div>
     </div>
   `,
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.less']
 })
 
 export class ContentWrapComponent {
