@@ -1,21 +1,21 @@
 import {NgModule, OnInit} from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 
-import { HeroesComponent } from './components/hero/heroes.component';
-import { HeroDetailComponent } from './components/hero/hero-detail.component';
-import { AppComponent } from "./components/app.component";
-import { HeroService } from "./services/hero.service";
+import {HeroesComponent} from './components/hero/heroes.component';
+import {HeroDetailComponent} from './components/hero/hero-detail.component';
+import {AppComponent} from "./components/app.component";
+import {HeroService} from "./services/hero.service";
 
-import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {AppRoutingModule} from "./router/app-routing.module";
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './services/in-memory-data.service';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './services/in-memory-data.service';
 
 import './rxjs-extensions';
-import { HeroSearchComponent } from "./components/hero/hero-search.component";
-import { CrisisCenterComponent } from "./components/crisis/crisis-center.component";
+import {HeroSearchComponent} from "./components/hero/hero-search.component";
+import {CrisisCenterComponent} from "./components/crisis/crisis-center.component";
 import {CrisisDetailComponent} from "./components/crisis/crisis-detail.component";
 
 import {MissionService} from "./services/mission.service";
@@ -35,6 +35,7 @@ import {DynamicComponentModule} from './components/dynamicComponentLoading/dynam
 import {HttpClientModule} from '@angular/common/http';
 import {PipeComponent} from "./components/pipes/pipe.component";
 import {NumberPipe} from "./components/pipes/number.pipe";
+import {FormModule} from "./components/form/form.module";
 
 @NgModule({
     imports: [
@@ -46,7 +47,8 @@ import {NumberPipe} from "./components/pipes/number.pipe";
         ComponentInteractionModule,
         DynamicComponentModule,
         RouterModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormModule
     ],
     declarations: [
         AppComponent,
@@ -69,15 +71,16 @@ import {NumberPipe} from "./components/pipes/number.pipe";
         PipeComponent,
         NumberPipe
     ],
-    providers: [ HeroService, MissionService ],
-    bootstrap: [ AppComponent ]
+    providers: [HeroService, MissionService],
+    bootstrap: [AppComponent]
 })
-export class AppModule implements OnInit{
+export class AppModule implements OnInit {
     crises: any;
 
-    constructor(){}
+    constructor() {
+    }
 
-    ngOnInit(): void{
+    ngOnInit(): void {
 
     }
 }

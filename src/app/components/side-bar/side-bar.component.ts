@@ -17,7 +17,8 @@ export class sideBarComponent implements OnInit {
         {name: '生命周期钩子', router: 'lifecycle-hooks'},
         {name: '组件交互', router: 'component-interaction'},
         {name: '特性模块', router: 'template'},
-        {name: '动态组件', router: 'dynamic-component-loading'}
+        {name: '动态组件', router: 'dynamic-component-loading'},
+        {name: '表单', router: 'form'}
     ];
     isOpenSideBar: boolean = true;
 
