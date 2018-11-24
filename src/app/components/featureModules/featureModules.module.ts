@@ -5,13 +5,14 @@ import {FeatureModulesComponent} from './featureModules.component';
 import {FeatureModulesRouting} from './featureModules.routing';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FeatureModulesRouting
-    ],
-    declarations: [
-        TestComponent,
-        FeatureModulesComponent
-    ]
+  imports: [
+    CommonModule,
+    FeatureModulesRouting
+  ],
+  declarations: [
+    TestComponent,
+    FeatureModulesComponent
+  ]
 })
-export class FeatureModulesModule{}
+export class FeatureModulesModule {
+}

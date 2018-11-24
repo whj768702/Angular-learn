@@ -4,12 +4,12 @@ import {Component} from '@angular/core';
 // import '../../../public/css/styles.css';
 
 @Component({
-    selector: 'sg-my-app',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less']
+  selector: 'sg-my-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
 })
 
-export class AppComponent{
-    color = 'yellow';
-    title: string = 'Tour of Heroes';
+export class AppComponent {
+  color = 'yellow';
+  title = 'Tour of Heroes';
 }
