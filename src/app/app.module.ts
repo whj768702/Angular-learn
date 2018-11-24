@@ -12,7 +12,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
 
-import './rxjs-extensions';
 import {HeroSearchComponent} from './components/hero/hero-search.component';
 import {CrisisCenterComponent} from './components/crisis/crisis-center.component';
 import {CrisisDetailComponent} from './components/crisis/crisis-detail.component';
