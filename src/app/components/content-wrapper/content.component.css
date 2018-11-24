@@ -1,48 +1,57 @@
-.viewFramework-sidebar-full .viewFramework-sidebar{
-    width: 180px;
-    display: block;
+.viewFramework-sidebar-full .viewFramework-sidebar {
+  width: 180px;
+  display: block;
 }
-.viewFramework-sidebar-full .viewFramework-product{
-    left: 180px;
+
+.viewFramework-sidebar-full .viewFramework-product {
+  left: 180px;
 }
+
 .viewFramework-product {
-    position: absolute;
-    width: auto;
-    top: 50px;
-    bottom: 0px;
-    right: 0px;
-    overflow: hidden;
-    left: 180px;
+  position: absolute;
+  width: auto;
+  top: 50px;
+  bottom: 0px;
+  right: 0px;
+  overflow: hidden;
+  left: 180px;
 }
-.small{
-    left: 100px !important;
+
+.small {
+  left: 100px !important;
 }
+
 h1 {
-    font-size: 1.2em;
-    color: #999;
-    margin-bottom: 0;
+  font-size: 1.2em;
+  color: #999;
+  margin-bottom: 0;
 }
+
 h2 {
-    font-size: 2em;
-    margin-top: 0;
-    padding-top: 0;
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0;
 }
+
 nav a {
-    padding: 5px 10px;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-block;
-    background-color: #eee;
-    border-radius: 4px;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
 }
+
 nav a:visited, a:link {
-    color: #607D8B;
+  color: #607D8B;
 }
+
 nav a:hover {
-    color: #039be5;
-    background-color: #CFD8DC;
+  color: #039be5;
+  background-color: #CFD8DC;
 }
+
 nav a.active {
-    color: #039be5;
+  color: #039be5;
 }
 

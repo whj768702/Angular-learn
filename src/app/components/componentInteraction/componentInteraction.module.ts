@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {ComponentInteractionRouting} from './componentInteraction.routing';
 import {CountdownParentComponent} from './countdown/countdown-parent.component';
-import {CountdownParentComponent2} from './countdown/countdown-parent.component2';
+import {CountdownParent2Component} from './countdown/countdown-parent2.component';
 import {CountdownTimerComponent} from './countdown/countdown-timer.component';
 import {ComponentInteractionComponent} from './componentInteraction.component';
 import {AstronautComponent} from './communicate-service/astronaut.component';
@@ -20,28 +20,29 @@ import {EventService} from './child-event/event.service';
 import {ChildEventComponent} from './child-event/childEvent.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ComponentInteractionRouting
-    ],
-    declarations: [
-        ParentComponentComponent,
-        ChildComponentComponent,
-        ChildComponentSetComponent,
-        CountdownParentComponent,
-        CountdownParentComponent2,
-        CountdownTimerComponent,
-        AstronautComponent,
-        MissioncontrolComponent,
-        ComponentInteractionComponent,
-        ParentComponentOnChangesComponent,
-        ChildComponentOnChangesComponent,
-        ParentListenComponent,
-        ChildSendComponent,
-        ChildSendStringComponent,
-        ChildEventComponent
-    ],
-    providers: [EventService]
+  imports: [
+    CommonModule,
+    FormsModule,
+    ComponentInteractionRouting
+  ],
+  declarations: [
+    ParentComponentComponent,
+    ChildComponentComponent,
+    ChildComponentSetComponent,
+    CountdownParentComponent,
+    CountdownParent2Component,
+    CountdownTimerComponent,
+    AstronautComponent,
+    MissioncontrolComponent,
+    ComponentInteractionComponent,
+    ParentComponentOnChangesComponent,
+    ChildComponentOnChangesComponent,
+    ParentListenComponent,
+    ChildSendComponent,
+    ChildSendStringComponent,
+    ChildEventComponent
+  ],
+  providers: [EventService]
 })
-export class ComponentInteractionModule{}
+export class ComponentInteractionModule {
+}

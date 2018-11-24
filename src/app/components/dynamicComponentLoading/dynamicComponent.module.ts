@@ -7,20 +7,21 @@ import {TwoComponent} from './components/two.component';
 import {DynamicComponentDirective} from './dynamicComponent.directive';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        DynamicComponentRouting
-    ],
-    declarations: [
-        DynamicComponentComponent,
-        OneComponent,
-        TwoComponent,
-        DynamicComponentDirective
-    ],
-    entryComponents: [
-        OneComponent,
-        TwoComponent
-    ]
+  imports: [
+    CommonModule,
+    DynamicComponentRouting
+  ],
+  declarations: [
+    DynamicComponentComponent,
+    OneComponent,
+    TwoComponent,
+    DynamicComponentDirective
+  ],
+  entryComponents: [
+    OneComponent,
+    TwoComponent
+  ]
 })
 
-export class DynamicComponentModule{}
+export class DynamicComponentModule {
+}

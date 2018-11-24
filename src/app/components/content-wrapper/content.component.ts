@@ -14,7 +14,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 
-export class contentComponent {
+export class ContentWrapComponent {
   color = 'yellow';
   title = 'test';
 }

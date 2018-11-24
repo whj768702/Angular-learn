@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
-export class MissionService{
+export class MissionService {
 
-    private missionAnnouncedSource = new Subject<string>();
-    private missionConfirmedSource = new Subject<string>();
+  private missionAnnouncedSource = new Subject<string>();
+  private missionConfirmedSource = new Subject<string>();
 
-    missionAnnounced$ = this.missionAnnouncedSource.asObservable();
-    missionConfirmed$ = this.missionConfirmedSource.asObservable();
+  missionAnnounced$ = this.missionAnnouncedSource.asObservable();
+  missionConfirmed$ = this.missionConfirmedSource.asObservable();
 
-    announceMission(mission:string){
-        this.missionAnnouncedSource.next(mission);
-    }
+  announceMission(mission: string) {
+    this.missionAnnouncedSource.next(mission);
+  }
 
-    confirmMission(astronaut:string){
-        this.missionConfirmedSource.next(astronaut);
-    }
+  confirmMission(astronaut: string) {
+    this.missionConfirmedSource.next(astronaut);
+  }
 }

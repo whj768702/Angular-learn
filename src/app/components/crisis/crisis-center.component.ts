@@ -1,32 +1,34 @@
-import {Component, OnInit}from '@angular/core';
-class Crisis{
-    id: number;
-    type: string;
+import {Component, OnInit} from '@angular/core';
+
+class Crisis {
+  id: number;
+  type: string;
 }
+
 const Crises: Crisis[] = [
-    {id: 1, type: 'fire'},
-    {id: 2, type: 'earthquake'},
-    {id: 3, type: 'flood'}
+  {id: 1, type: 'fire'},
+  {id: 2, type: 'earthquake'},
+  {id: 3, type: 'flood'}
 ];
 
 @Component({
-    selector: 'sg-crisis-center',
-    // moduleId: module.id,
-    templateUrl: 'crisis-center.component.html',
-    styleUrls: ['crisis-center.component.css']
+  selector: 'sg-crisis-center',
+  // moduleId: module.id,
+  templateUrl: 'crisis-center.component.html',
+  styleUrls: ['crisis-center.component.css']
 })
 
-export class CrisisCenterComponent implements OnInit{
-    crises: Crisis[];
+export class CrisisCenterComponent implements OnInit {
+  crises: Crisis[];
 
-    constructor(){
-    }
+  constructor() {
+  }
 
-    ngOnInit(): void{
-        this.crises = Crises;
-    }
+  ngOnInit(): void {
+    this.crises = Crises;
+  }
 
-    show(id: number): void{
-        console.log(id);
-    }
+  show(id: number): void {
+    console.log(id);
+  }
 }

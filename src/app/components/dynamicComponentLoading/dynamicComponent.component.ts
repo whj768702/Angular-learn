@@ -4,49 +4,51 @@ import {DynamicComponentDirective} from './dynamicComponent.directive';
 import {TwoComponent} from './components/two.component';
 
 @Component({
-    selector: 'dynamic-component-loading',
-    template: `
-        <h1>动态加载组件</h1>
-        <ng-template dynamic-component-anchor-point></ng-template>
-    `
+  selector: 'dynamic-component-loading',
+  template: `
+    <h1>动态加载组件</h1>
+    <ng-template dynamic-component-anchor-point></ng-template>
+  `
 })
 
-export class DynamicComponentComponent implements OnDestroy, OnInit{
-    @ViewChild(DynamicComponentDirective) componentHost: DynamicComponentDirective;
+export class DynamicComponentComponent implements OnDestroy, OnInit {
+  @ViewChild(DynamicComponentDirective) componentHost: DynamicComponentDirective;
 
-    currentIndex: number = 1;
-    interval: any;
-    components = [
-        {component: OneComponent, data: 'one'},
-        {component: TwoComponent, data: 'two'}
-    ];
-    constructor(private componentFactoryResolver: ComponentFactoryResolver){}
+  currentIndex: number = 1;
+  interval: any;
+  components = [
+    {component: OneComponent, data: 'one'},
+    {component: TwoComponent, data: 'two'}
+  ];
 
-    ngOnInit(){
-        this.loadComponent();
-        this.getAds();
-    }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+  }
 
-    ngOnDestroy() {
-        clearInterval(this.interval);
-    }
+  ngOnInit() {
+    this.loadComponent();
+    this.getAds();
+  }
 
-    loadComponent() {
-        this.currentIndex = (this.currentIndex + 1) % 2;
-        let adItem = this.components[this.currentIndex];
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
 
-        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
+  loadComponent() {
+    this.currentIndex = (this.currentIndex + 1) % 2;
+    const adItem = this.components[this.currentIndex];
 
-        let viewContainerRef = this.componentHost.viewContainerRef;
-        viewContainerRef.clear();
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
 
-        let componentRef = viewContainerRef.createComponent(componentFactory);
-        componentRef.instance.data = adItem.data;
-    }
+    const viewContainerRef = this.componentHost.viewContainerRef;
+    viewContainerRef.clear();
 
-    getAds() {
-        this.interval = setInterval(() => {
-            this.loadComponent();
-        }, 3000);
-    }
+    const componentRef = viewContainerRef.createComponent(componentFactory);
+    componentRef.instance.data = adItem.data;
+  }
+
+  getAds() {
+    this.interval = setInterval(() => {
+      this.loadComponent();
+    }, 3000);
+  }
 }

@@ -7,7 +7,7 @@ import {Menu} from './menu';
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']
 })
-export class sideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit {
   menus: Menu[] = [
     {name: 'Dashboard', router: 'dashboard'},
     {name: 'Crisis Center', router: 'crisis'},
@@ -20,7 +20,7 @@ export class sideBarComponent implements OnInit {
     {name: '动态组件', router: 'dynamic-component-loading'},
     {name: '表单', router: 'form'}
   ];
-  isOpenSideBar  = true;
+  isOpenSideBar = true;
 
   constructor() {
   }

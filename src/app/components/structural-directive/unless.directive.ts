@@ -1,22 +1,22 @@
-import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 
 @Directive({
-    selector: '[myUnless]'
+  selector: '[myUnless]'
 })
 
-export class UnlessDirective{
-    private hasView: Boolean;
+export class UnlessDirective {
+  private hasView: Boolean;
 
-    constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef){
-    }
+  constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) {
+  }
 
-    @Input() set myUnless(condition: boolean){
-        if(!condition && !this.hasView){
-            this.viewContainer.createEmbeddedView(this.templateRef);
-            this.hasView = true;
-        }else if(condition && this.hasView){
-            this.viewContainer.clear();
-            this.hasView = false;
-        }
+  @Input() set myUnless(condition: boolean) {
+    if (!condition && !this.hasView) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
+      this.hasView = true;
+    } else if (condition && this.hasView) {
+      this.viewContainer.clear();
+      this.hasView = false;
     }
+  }
 }
