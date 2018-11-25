@@ -20,19 +20,10 @@ export class SideBarComponent implements OnInit {
     {name: '动态组件', router: 'dynamic-component-loading'},
     {name: '表单', router: 'form'}
   ];
-  isOpenSideBar = true;
 
   constructor() {
   }
 
   ngOnInit() {
-  }
-
-  changeSideBar(): void {
-    this.isOpenSideBar = !this.isOpenSideBar;
-  }
-
-  sideBarState(): boolean {
-    return this.isOpenSideBar;
   }
 }

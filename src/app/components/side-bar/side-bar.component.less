@@ -1,17 +1,27 @@
-.viewFramework-sidebar-full {
-  width: 180px;
-  display: block;
-}
-
-.viewFramework-sidebar {
-  position: fixed;
-  top: 60px;
-  bottom: 0;
-  background-color: #293038;
-  z-index: 102;
-  overflow-x: hidden;
+.view-sidebar {
+  width: 120px;
+  height: 100%;
+  background-color: #515658;
+  border-right: 1px solid #3c3f41;
+  text-align: right;
+  .sidebar-ul {
+    padding: 10px;
+    .sidebar-item {
+      height: 26px;
+      line-height: 26px;
+      a:link {
+        text-decoration: none;
+      }
+      a {
+        color: white;
+      }
+      .current-item {
+        color: orange;
+      }
+    }
+  }
 }
 
 .small {
-  width: 100px;
+  width: 120px;
 }

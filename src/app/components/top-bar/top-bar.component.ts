@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
     <div>top-bar</div>
   `,
   styles: [`div {
-    height: 50px;
-    background-color: gray;
+    height: 60px;
+    background-color: #4e6578;
   }`]
 })
 
