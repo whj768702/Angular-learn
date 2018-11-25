@@ -1,5 +1,30 @@
-form {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.form-wrap {
+  display: flex;
+  justify-content: start;
+  border: 1px dotted #525658;
+  margin-top: 18px;
+  &>div:first-child{
+    border-right: 1px dotted #525658;
+  }
+  .form-item {
+    padding: 10px;
+    .reactive-form {
+      display: flex;
+      flex-direction: column;
+
+      .form-value {
+        width: 180px;
+
+        & > label {
+          display: block;
+        }
+      }
+
+      .form-submit {
+        width: fit-content;
+        padding: 2px 4px;
+        margin-top: 18px;
+      }
+    }
+  }
 }

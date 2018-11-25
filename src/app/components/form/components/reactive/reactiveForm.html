@@ -1,29 +1,69 @@
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label>name:</label>
-    <input type="text" formControlName="name">
+<div class="form-wrap">
+  <div class="form-item">
+    <span>使用FormControl创建表单</span>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="reactive-form">
+      <div class="form-value">
+        <label>name:</label>
+        <input type="text" formControlName="name">
+      </div>
+      <div class="form-value">
+        <label>age:</label>
+        <input type="text" formControlName="age">
+      </div>
+      <div class="form-value">
+        <label>weight:</label>
+        <input type="text" formControlName="weight">
+      </div>
+      <div class="form-value">
+        <label>height:</label>
+        <input type="text" formControlName="height">
+      </div>
+      <div formGroupName="address">
+        <div class="form-value">
+          <label>city:</label>
+          <input type="text" formControlName="city">
+        </div>
+        <div class="form-value">
+          <label>phone:</label>
+          <input type="text" formControlName="phone">
+        </div>
+      </div>
+      <button class="form-submit" type="submit" [disabled]="!profileForm.valid">确定</button>
+      <button class="form-submit" type="button" (click)="setValue()">setValue</button>
+      <button class="form-submit" type="button" (click)="patchValue()">patchValue</button>
+    </form>
   </div>
-  <div>
-    <label>age:</label>
-    <input type="text" formControlName="age">
+  <div class="form-item">
+    <span>使用FormBuilder创建表单</span>
+    <form [formGroup]="personalForm" (ngSubmit)="onSubmit()" class="reactive-form">
+      <div class="form-value">
+        <label>name:</label>
+        <input type="text" formControlName="name">
+      </div>
+      <div class="form-value">
+        <label>age:</label>
+        <input type="text" formControlName="age">
+      </div>
+      <div class="form-value" formGroupName="moreInfo">
+        <div class="form-value">
+          <label>weight:</label>
+          <input type="text" formControlName="weight">
+        </div>
+        <div class="form-value">
+          <label>height:</label>
+          <input type="text" formControlName="height">
+        </div>
+      </div>
+      <div class="form-item" formArrayName="aliases">
+        <label>Aliases</label>
+        <div class="form-value" *ngFor="let address of aliases.controls; let i=index">
+          <label>Alias:</label>
+          <input type="text" [formControlName]="i">
+        </div>
+      </div>
+      <button class="form-submit" type="submit" [disabled]="personalForm.invalid">确定</button>
+      <button class="form-submit" type="button" (click)="addAlias()">add Alias</button>
+      <span>{{personalForm.status}}</span>
+    </form>
   </div>
-  <div>
-    <label>weight:</label>
-    <input type="text" formControlName="weight">
-  </div>
-  <div>
-    <label>height:</label>
-    <input type="text" formControlName="height">
-  </div>
-  <div formGroupName="address">
-    <div>
-      <label>city:</label>
-      <input type="text" formControlName="city">
-    </div>
-    <div>
-      <label>phone:</label>
-      <input type="text" formControlName="phone">
-    </div>
-  </div>
-  <button type="submit" [disabled]="!profileForm.valid">确定</button>
-</form>
+</div>
