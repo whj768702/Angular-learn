@@ -1,33 +1,36 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {FormGroup, FormControl, FormBuilder, FormArray, Validators} from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  FormBuilder,
+  FormArray,
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'reactive-form',
   templateUrl: './reactiveForm.html',
   styleUrls: ['./reactive.less']
 })
-
 export class ReactiveFormComponent {
   @Output() submit = new EventEmitter();
 
-  profileForm = new FormGroup(
-    {
-      name: new FormControl(''),
-      age: new FormControl(''),
-      weight: new FormControl(''),
-      height: new FormControl(''),
-      address: new FormGroup({
-        city: new FormControl(''),
-        phone: new FormControl('')
-      })
-    }
-  );
+  profileForm = new FormGroup({
+    name: new FormControl(''),
+    age: new FormControl(''),
+    weight: new FormControl(''),
+    height: new FormControl(''),
+    address: new FormGroup({
+      city: new FormControl(''),
+      phone: new FormControl('')
+    })
+  });
 
   /* FormBuilder有三个方法：
-  * 1. control()对应FormControl
-  * 2. group()对应FormGroup
-  * 3. array()对应FormArray
-  * */
+   * 1. control()对应FormControl
+   * 2. group()对应FormGroup
+   * 3. array()对应FormArray
+   * */
   personalForm = this.formBuilder.group({
     name: ['', Validators.required],
     age: 20,
@@ -35,9 +38,7 @@ export class ReactiveFormComponent {
       weight: 100,
       height: 100
     }),
-    aliases: this.formBuilder.array([
-      this.formBuilder.control('')
-    ])
+    aliases: this.formBuilder.array([this.formBuilder.control('')])
   });
 
   constructor(private formBuilder: FormBuilder) {
@@ -47,6 +48,7 @@ export class ReactiveFormComponent {
   get aliases() {
     return this.personalForm.get('aliases') as FormArray;
   }
+
   // 一个绰号控件动态插入到绰号FormArray中
   addAlias() {
     this.aliases.push(this.formBuilder.control(''));
