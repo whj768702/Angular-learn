@@ -1,12 +1,14 @@
 <div class="template-form">
   <div [hidden]="submitted">
-    <h1>Person information</h1>
+    <h1>Person information(通过局部变量方式验证)</h1>
     <form #personForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">name</label>
         <input type="text" class="form-control" id="name" name="name"
                required [(ngModel)]="person.name" #name="ngModel">
-        <div class="alert alert-danger" [hidden]="name.valid || name.pristine">必填</div>
+        <div class="alert alert-danger" *ngIf="name.invalid&&(name.dirty || name.touched)">
+          <div class="alert alert-danger" *ngIf="name.errors.required">必填</div>
+        </div>
       </div>
       <div class="form-group">
         <label for="address">address</label>
