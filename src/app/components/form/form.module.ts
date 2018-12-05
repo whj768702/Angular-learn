@@ -5,6 +5,8 @@ import {FormComponent} from './form.component';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormComponent} from './components/reactive/reactiveForm';
 import {TemplateFormComponent} from './components/template/templateForm.component';
+import {DynamicFormComponent} from './components/dynamic/dynamic-form.component';
+import {DynamicFormQuestionComponent} from './components/dynamic/dynamic-form-question.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import {TemplateFormComponent} from './components/template/templateForm.componen
   declarations: [
     FormComponent,
     ReactiveFormComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    DynamicFormQuestionComponent,
+    DynamicFormComponent
   ]
 })
 

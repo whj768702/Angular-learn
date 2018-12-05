@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormComponent} from './form.component';
 import {ReactiveFormComponent} from './components/reactive/reactiveForm';
 import {TemplateFormComponent} from './components/template/templateForm.component';
+import {DynamicFormComponent} from './components/dynamic/dynamic-form.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: '', pathMatch: 'full'},
       {path: 'reactive', component: ReactiveFormComponent},
-      {path: 'template', component: TemplateFormComponent}
+      {path: 'template', component: TemplateFormComponent},
+      {path: 'dynamic', component: DynamicFormComponent}
     ]
   }
 ];
