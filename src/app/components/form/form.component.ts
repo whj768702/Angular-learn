@@ -13,7 +13,13 @@ import {Component} from '@angular/core';
     <span>
       <a routerLink="./dynamic">动态表单</a>
     </span>
-    <router-outlet></router-outlet>`
+    <router-outlet></router-outlet>`,
+  styles: [`
+    span {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  `]
 })
 
 export class FormComponent {
