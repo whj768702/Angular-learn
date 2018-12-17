@@ -13,7 +13,7 @@ const httpOptions = {
 
 @Injectable()
 export class HeroService {
-  private heroesUrl = 'app/heroes';
+  private heroesUrl = 'api/name';
 
   constructor(
     private http: HttpClient) {
@@ -22,8 +22,9 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
-        tap(() => this.log('fetched heroes')),
-        catchError(this.handleError('getHeroes', []))
+        map(result => {
+          return (result as any).data;
+        })
       );
   }
 

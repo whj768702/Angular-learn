@@ -40,7 +40,6 @@ import {FormModule} from './components/form/form.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
     FeatureModulesModule,
     ComponentInteractionModule,
     DynamicComponentModule,
