@@ -1,28 +1,27 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <span class="badge">{{hero.id}}</span>
-    <span>{{hero.name}}</span>
+    <span class="name">{{hero.name}}</span>
     <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
   </li>
 </ul>
-<div *ngIf="selectedHero">
-  <h2>
-    {{selectedHero.name | uppercase}} is my hero
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
+<div *ngIf="selectedHero" class="hero-detail">
+  <span>当前英雄：</span>
+  <span class="hero-info">
+    {{selectedHero.name | uppercase}}
+  </span>
+  <button (click)="gotoDetail()">详情</button>
 </div>
-<div>
-  <label>Hero name:</label> <input #heroName/>
-  <button (click)="add(heroName.value); heroName.value=''">
-    Add
-  </button>
+<div class="add-hero">
+  <label>英雄名：</label>
+  <input #heroName/>
+  <button (click)="add(heroName.value); heroName.value=''">增加</button>
 </div>
 
-<div>my-hero-detail</div>
-<sg-my-hero-detail [myHero]="selectedHero" (myVote)="onVoted($event)"></sg-my-hero-detail>
+<!--<div>my-hero-detail</div>-->
+<!--<sg-my-hero-detail [myHero]="selectedHero" (myVote)="onVoted($event)"></sg-my-hero-detail>-->
 
-<div>
-  vote
-  <h3>agree:{{agreed}},disagreed:{{disagreed}}</h3>
-</div>
+<!--<div>-->
+  <!--vote-->
+  <!--<h3>agree:{{agreed}},disagreed:{{disagreed}}</h3>-->
+<!--</div>-->

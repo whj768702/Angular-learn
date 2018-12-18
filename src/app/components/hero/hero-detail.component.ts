@@ -4,7 +4,7 @@ import {HeroService} from '../../services/hero.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 
-import {switchMap} from 'rxjs/operators';
+import {switchMap, tap} from 'rxjs/operators';
 
 @Component({
   // moduleId: module.id,
@@ -34,8 +34,8 @@ export class HeroDetailComponent implements OnInit {
   @Output() myVote = new EventEmitter<boolean>();
   voted = false;
 
-  vote(argreed: boolean) {
-    this.myVote.emit(argreed);
+  vote(agreed: boolean) {
+    this.myVote.emit(agreed);
     this.voted = true;
   }
 
@@ -49,7 +49,12 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params
       .pipe(switchMap((params: Params) => this.heroService.getHero(+params['id'])))
-      .subscribe(hero => this.hero = hero);
+      .subscribe(result => {
+        if (result) {
+          console.log('result: ', result);
+          this.hero = result;
+        }
+      });
   }
 
   goBack(): void {

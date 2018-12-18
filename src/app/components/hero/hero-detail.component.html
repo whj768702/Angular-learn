@@ -1,12 +1,13 @@
-<div *ngIf="hero">
-  <h2>{{hero.name}} details!</h2>
-  <div><label>id: </label>{{hero.id}}</div>
+<div *ngIf="hero" class="hero-detail">
+  <span class="title">{{hero.name}}详情</span>
+  <!--<div><label>id: </label>{{hero.id}}</div>-->
   <div>
-    <label>name:</label>
-    <input [(ngModel)]="hero.name" placeholder="name"/>
+    <label>英雄名：</label>
+    <span>{{hero.name}}</span>
+    <!--<input [(ngModel)]="hero.name" placeholder="name"/>-->
   </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+  <button (click)="goBack()">返回</button>
+  <!--<button (click)="save()">Save</button>-->
 </div>
 
 <div *ngIf="_myHero">
@@ -16,13 +17,13 @@
     <label>name:</label>
     <input [(ngModel)]="_myHero.name" placeholder="name"/>
   </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+  <button (click)="goBack()">返回</button>
+  <!--<button (click)="save()">Save</button>-->
 </div>
 
 
-<div>
-  <span>output</span>
-  <button (click)="vote(true)">agree</button>
-  <button (click)="vote(false)">disagree</button>
-</div>
+<!--<div>-->
+  <!--<span>output</span>-->
+  <!--<button (click)="vote(true)">agree</button>-->
+  <!--<button (click)="vote(false)">disagree</button>-->
+<!--</div>-->

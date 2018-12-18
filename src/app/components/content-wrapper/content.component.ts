@@ -16,5 +16,5 @@ import {Component} from '@angular/core';
 
 export class ContentWrapComponent {
   color = 'yellow';
-  title = 'test';
+  title = 'welcome';
 }

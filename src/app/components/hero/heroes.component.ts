@@ -37,7 +37,9 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes => {
+      this.heroes = heroes;
+    });
     this.logger.log('getting heroes……');
   }
 

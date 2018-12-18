@@ -4,25 +4,21 @@
 }
 
 .heroes {
-  margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 260px;
 
   li {
     cursor: pointer;
-    position: relative;
-    left: 0;
     background-color: #eee;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
     border-radius: 4px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
 
     &:hover {
       color: #607d8b;
       background-color: #ddd;
-      left: .1em;
     }
 
     &.selected {
@@ -31,6 +27,20 @@
         color: white;
       }
     }
+
+    span {
+      display: inline-block;
+    }
+
+    .name {
+      margin-left: 20px;
+    }
+
+    .delete {
+      color: black;
+      background-color: #eeeeee;
+      border: none;
+    }
   }
 
   .text {
@@ -38,38 +48,60 @@
     top: -3px;
   }
 
-  .badge {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #607d8b;
-    line-height: 1em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.8em;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
+}
+
+.hero-detail {
+  .hero-info {
+    font-size: 14px;
+  }
+
+  & > button {
+    border: 1px solid #404858;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
   }
 }
 
-button {
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #cfd8dc;
+.add-hero {
+  margin: 10px 0;
+  display: flex;
+  & > input {
+    background: hsla(0,0%,100%,.1);
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    padding: 6px 10px;
+    width: 200px;
+    outline: none;
+    font-size: 12px;
+    min-height: 29px;
   }
-
-  &.delete {
-    float: right;
-    margin-top: 2px;
-    margin-right: .8em;
-    background-color: gray !important;
-    color: white;
+  & > button {
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    font-size: 14px;
+    height: 31px;
+    margin-left: 4px;
   }
 }
+
+//button {
+//  background-color: #eee;
+//  border: none;
+//  padding: 5px 10px;
+//  border-radius: 4px;
+//  cursor: pointer;
+//
+//  &:hover {
+//    background-color: #cfd8dc;
+//  }
+//
+//  &.delete {
+//    float: right;
+//    margin-top: 2px;
+//    margin-right: .8em;
+//    background-color: gray !important;
+//    color: white;
+//  }
+//}
+//
