@@ -9,8 +9,6 @@ import {HeroService} from './services/hero.service';
 
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {AppRoutingModule} from './app-routing.module';
-import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './services/in-memory-data.service';
 
 import {HeroSearchComponent} from './components/hero/hero-search.component';
 import {CrisisCenterComponent} from './components/crisis/crisis-center.component';
