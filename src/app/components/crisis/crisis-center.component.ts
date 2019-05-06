@@ -13,7 +13,6 @@ const Crises: Crisis[] = [
 
 @Component({
   selector: 'sg-crisis-center',
-  // moduleId: module.id,
   templateUrl: 'crisis-center.component.html',
   styleUrls: ['crisis-center.component.less']
 })

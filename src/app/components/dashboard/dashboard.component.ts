@@ -3,7 +3,6 @@ import {Hero} from '../../hero';
 import {HeroService} from '../../services/hero.service';
 
 @Component({
-  // moduleId: module.id,
   selector: 'sg-my-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.less']

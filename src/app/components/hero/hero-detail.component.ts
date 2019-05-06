@@ -4,10 +4,9 @@ import {HeroService} from '../../services/hero.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 
-import {switchMap, tap} from 'rxjs/operators';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
-  // moduleId: module.id,
   selector: 'sg-my-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.less']

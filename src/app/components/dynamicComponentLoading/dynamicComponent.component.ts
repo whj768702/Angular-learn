@@ -14,7 +14,7 @@ import {TwoComponent} from './components/two.component';
 export class DynamicComponentComponent implements OnDestroy, OnInit {
   @ViewChild(DynamicComponentDirective) componentHost: DynamicComponentDirective;
 
-  currentIndex: number = 1;
+  currentIndex = 1;
   interval: any;
   components = [
     {component: OneComponent, data: 'one'},
