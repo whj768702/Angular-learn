@@ -13,7 +13,7 @@ import {CountdownTimerComponent} from './countdown-timer.component';
 })
 
 export class CountdownParent2Component implements AfterViewInit {
-  @ViewChild(CountdownTimerComponent)
+  @ViewChild(CountdownTimerComponent, { static: false })
   private timerComponent: CountdownTimerComponent;
 
   seconds(): number {

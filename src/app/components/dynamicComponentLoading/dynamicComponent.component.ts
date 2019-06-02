@@ -12,7 +12,7 @@ import {TwoComponent} from './components/two.component';
 })
 
 export class DynamicComponentComponent implements OnDestroy, OnInit {
-  @ViewChild(DynamicComponentDirective) componentHost: DynamicComponentDirective;
+  @ViewChild(DynamicComponentDirective, { static: false }) componentHost: DynamicComponentDirective;
 
   currentIndex = 1;
   interval: any;
