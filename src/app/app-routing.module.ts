@@ -7,7 +7,7 @@ import {HeroDetailComponent} from './components/hero/hero-detail.component';
 import {CrisisCenterComponent} from './components/crisis/crisis-center.component';
 import {CrisisDetailComponent} from './components/crisis/crisis-detail.component';
 import {HighlightDisplayComponent} from './components/attribute-directives/highlight-display.component';
-import {MyUnlessComponent} from './components/structural-directive/myUnless.component';
+import {MyUnlessComponent} from './components/structural-directive/my-unless.component';
 import {LifecycleHooksComponent} from './components/lifecycle-hooks/lifecycle-hooks';
 import {PipeComponent} from './components/pipes/pipe.component';
 

@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {DynamicComponentComponent} from './dynamicComponent.component';
-import {DynamicComponentRouting} from './dynamicComponent.routing';
+import {DynamicComponentComponent} from './dynamic-component.component';
+import {DynamicComponentRouting} from './dynamic-component.routing';
 import {OneComponent} from './components/one.component';
 import {TwoComponent} from './components/two.component';
-import {DynamicComponentDirective} from './dynamicComponent.directive';
+import {DynamicComponentDirective} from './dynamic-component.directive';
 
 @NgModule({
   imports: [

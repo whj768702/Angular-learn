@@ -3,8 +3,8 @@ import {Person} from './person';
 
 @Component({
   selector: 'template-form',
-  templateUrl: './templateForm.html',
-  styleUrls: ['./templateForm.less']
+  templateUrl: './template-form.html',
+  styleUrls: ['./template-form.less']
 })
 
 export class TemplateFormComponent implements OnInit {

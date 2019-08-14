@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {TestComponent} from './test/test.component';
 import {CommonModule} from '@angular/common';
-import {FeatureModulesComponent} from './featureModules.component';
-import {FeatureModulesRouting} from './featureModules.routing';
+import {FeatureModulesComponent} from './feature-modules.component';
+import {FeatureModulesRouting} from './feature-modules.routing';
 
 @NgModule({
   imports: [

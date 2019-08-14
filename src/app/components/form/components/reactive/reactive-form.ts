@@ -9,7 +9,7 @@ import {
 
 @Component({
   selector: 'reactive-form',
-  templateUrl: './reactiveForm.html',
+  templateUrl: './reactive-form.html',
   styleUrls: ['./reactive.less']
 })
 export class ReactiveFormComponent {

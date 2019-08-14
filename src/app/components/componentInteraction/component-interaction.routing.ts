@@ -1,13 +1,13 @@
 import {RouterModule, Routes} from '@angular/router';
-import {ComponentInteractionComponent} from './componentInteraction.component';
+import {ComponentInteractionComponent} from './component-interaction.component';
 import {CountdownParentComponent} from './countdown/countdown-parent.component';
 import {CountdownParent2Component} from './countdown/countdown-parent2.component';
 import {NgModule} from '@angular/core';
 import {MissioncontrolComponent} from './communicate-service/missioncontrol.component';
-import {ParentComponentComponent} from './input/parentComponent.component';
-import {ChildComponentSetComponent} from './input/childComponent-set.component';
-import {ParentComponentOnChangesComponent} from './OnChanges/parentComponent.component';
-import {ParentListenComponent} from './child-event/parentListen.component';
+import {ParentComponentComponent} from './input/parent-component.component';
+import {ChildComponentSetComponent} from './input/child-component-set.component';
+import {ParentComponentOnChangesComponent} from './OnChanges/parent-component.component';
+import {ParentListenComponent} from './child-event/parent-listen.component';
 
 const routes: Routes = [
   {

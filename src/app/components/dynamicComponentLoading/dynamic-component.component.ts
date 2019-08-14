@@ -1,6 +1,6 @@
 import {Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {OneComponent} from './components/one.component';
-import {DynamicComponentDirective} from './dynamicComponent.directive';
+import {DynamicComponentDirective} from './dynamic-component.directive';
 import {TwoComponent} from './components/two.component';
 
 @Component({

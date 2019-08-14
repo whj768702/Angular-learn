@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'component-interaction',
-  templateUrl: './componentInteraction.html',
-  styleUrls: ['./componentInteraction.less']
+  templateUrl: './component-interaction.html',
+  styleUrls: ['./component-interaction.less']
 })
 
 export class ComponentInteractionComponent {
