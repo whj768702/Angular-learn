@@ -24,15 +24,15 @@ const routes: Routes = [
   {path: 'pipe', component: PipeComponent},
   {
     path: 'template',
-    loadChildren: './components/featureModules/featureModules.module#FeatureModulesModule'
+    loadChildren: './components/featureModules/feature-modules.module#FeatureModulesModule'
   },
   {
     path: 'component-interaction',
-    loadChildren: './components/componentInteraction/componentInteraction.module#ComponentInteractionModule'
+    loadChildren: './components/componentInteraction/component-interaction.module#ComponentInteractionModule'
   },
   {
     path: 'dynamic-component-loading',
-    loadChildren: './components/dynamicComponentLoading/dynamicComponent.module#DynamicComponentModule'
+    loadChildren: './components/dynamicComponentLoading/dynamic-component.module#DynamicComponentModule'
   },
   {
     path: 'form',

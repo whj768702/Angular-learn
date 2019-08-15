@@ -2,6 +2,9 @@ import {NgModule, OnInit} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 
+// ng-zorro-antd
+import {NgZorroAntdModule} from 'ng-zorro-antd';
+
 import {HeroesComponent} from './components/hero/heroes.component';
 import {HeroDetailComponent} from './components/hero/hero-detail.component';
 import {AppComponent} from './app.component';
@@ -32,6 +35,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {PipeComponent} from './components/pipes/pipe.component';
 import {NumberPipe} from './components/pipes/number.pipe';
 import {FormModule} from './components/form/form.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -43,7 +47,9 @@ import {FormModule} from './components/form/form.module';
     DynamicComponentModule,
     RouterModule,
     AppRoutingModule,
-    FormModule
+    FormModule,
+    NgZorroAntdModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,

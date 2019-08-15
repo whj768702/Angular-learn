@@ -1,2 +1,22 @@
-<sg-top-bar></sg-top-bar>
-<sg-content-wrapper></sg-content-wrapper>
+<!--<sg-top-bar></sg-top-bar>-->
+<!--<sg-content-wrapper></sg-content-wrapper>-->
+<nz-layout class="layout">
+  <nz-sider nzCollapsible
+            [(nzCollapsed)]="isCollapsed"
+            [nzBreakpoint]="'lg'"
+            [nzCollapsedWidth]="0">
+    <div>
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        <li *ngFor="let item of menus" nz-menu-item>
+          <a routerLink="/{{item.router}}">{{item.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </nz-sider>
+  <nz-layout>
+    <nz-header></nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
