@@ -4,6 +4,7 @@ import {Hero} from '../../hero';
 import {HeroService} from '../../services/hero.service';
 import {Router} from '@angular/router';
 import {Logger} from '../../services/logger.service';
+import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
   selector: 'sg-my-heroes',
@@ -17,11 +18,13 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
   selectedHero: Hero;
   agreed = 0;
   disagreed = 0;
+  loading = false;
 
   constructor(
     private heroService: HeroService,
     private router: Router,
-    private logger: Logger) {
+    private logger: Logger,
+    private message: NzMessageService) {
   }
 
   ngOnChanges(): void {
@@ -30,10 +33,6 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('here is ngOnDestroy');
-  }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
   }
 
   getHeroes(): void {
@@ -54,9 +53,15 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
+    this.loading = true;
     this.heroService
-      .deleteHero(hero.id).subscribe();
+      .deleteHero(hero.id).subscribe(() => {
+      this.loading = false;
+      this.heroes = this.heroes.filter(h => h !== hero);
+    }, error => {
+      this.loading = false;
+      this.message.create('error', '删除失败');
+    });
   }
 
   add(name: string): void {
@@ -66,8 +71,8 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
     }
     this.heroService.addHero({name} as Hero)
       .subscribe(hero => {
-        this.heroes.push(hero);
-        this.selectedHero = null;
+        console.log('add: ', hero);
+        this.heroes = [...this.heroes, hero];
       });
   }
 

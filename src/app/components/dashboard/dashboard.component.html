@@ -1,11 +1,23 @@
 <div class="dashboard-title">
   <span>英雄列表</span>
 </div>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4 hero">
-    <div class="module hero">
-      <span>{{hero.name}}</span>
-    </div>
-  </a>
-</div>
-<sg-hero-search></sg-hero-search>
+<!--<div class="grid grid-pad">-->
+<!--  <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4 hero">-->
+<!--    <div class="module hero">-->
+<!--      <span>{{hero.name}}</span>-->
+<!--    </div>-->
+<!--  </a>-->
+<!--</div>-->
+<nz-spin [nzSpinning]="loading">
+  <nz-list [nzDataSource]="heroes" [nzRenderItem]="heroList"
+           [nzGrid]="{gutter: 16, xs: 23, sm: 12, md: 6, lg: 6, xl: 4}">
+    <ng-template #heroList let-hero>
+      <nz-list-item [nzContent]="nzContent">
+        <ng-template #nzContent>
+          <nz-card [routerLink]="['/detail', hero.id]">{{hero.name}}</nz-card>
+        </ng-template>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+  <hero-search></hero-search>
+</nz-spin>
