@@ -3,14 +3,15 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'show-highlight',
   template: `
-    <div>
       <div>
-        <input type="radio" name="colors" (click)="color='yellow'">yellow
-        <input type="radio" name="colors" (click)="color='red'">red
-        <input type="radio" name="colors" (click)="color='blue'">blue
+          <nz-radio-group [(ngModel)]="color">
+              <label nz-radio nzValue="yellow">yellow</label>
+              <label nz-radio nzValue="red">red</label>
+              <label nz-radio nzValue="blue">blue</label>
+          </nz-radio-group>
+          <br/>
+          <span myHighlight [highlightColor]="color" [defaultColor]="'black'">Highlight</span>
       </div>
-      <span myHighlight [highlightColor]="color" [defaultColor]="'black'">Highlight</span>
-    </div>
   `,
   styles: ['div{margin:28px auto;}']
 })
