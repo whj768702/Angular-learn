@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, HostListener} from '@angular/core';
 import {Menu} from './components/side-bar/menu';
 
 @Component({
@@ -10,6 +10,7 @@ import {Menu} from './components/side-bar/menu';
 export class AppComponent {
   color = 'yellow';
   isCollapsed = false;
+  stopLeftSwipe = false;
 
   menus: Menu[] = [
     {name: 'Dashboard', router: 'dashboard'},
@@ -23,4 +24,20 @@ export class AppComponent {
     {name: '动态组件', router: 'dynamic-component-loading'},
     {name: '表单', router: 'form'}
   ];
+
+  constructor(private el: ElementRef) {
+  }
+
+  @HostListener('mousewheel', ['$event']) onMousewheel($event) {
+    let leftSwipe;
+    leftSwipe = $event.deltaX < 0 && this.el.nativeElement.scrollLeft === 0;
+    if (leftSwipe && this.stopLeftSwipe) {
+      $event.preventDefault();
+    }
+  }
+
+  changeLeftSwipe() {
+    this.stopLeftSwipe = !this.stopLeftSwipe;
+  }
+
 }
