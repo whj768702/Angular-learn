@@ -39,11 +39,12 @@ export class DynamicComponentComponent implements OnDestroy, OnInit {
 
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
 
-    const viewContainerRef = this.componentHost.viewContainerRef;
-    viewContainerRef.clear();
-
-    const componentRef = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance.data = adItem.data;
+    if (this.componentHost) {
+      const viewContainerRef = this.componentHost.viewContainerRef;
+      viewContainerRef.clear();
+      const componentRef = viewContainerRef.createComponent(componentFactory);
+      componentRef.instance.data = adItem.data;
+    }
   }
 
   getAds() {

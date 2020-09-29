@@ -9,6 +9,7 @@ import {NzMenuModule} from "ng-zorro-antd/menu";
 import {NzSpinModule} from "ng-zorro-antd/spin";
 import {NzListModule} from "ng-zorro-antd/list";
 import {NzInputNumberModule} from "ng-zorro-antd/input-number";
+import {NzRadioModule} from "ng-zorro-antd/radio";
 
 import {HeroesComponent} from './components/hero/heroes.component';
 import {HeroDetailComponent} from './components/hero/hero-detail.component';
@@ -60,6 +61,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     NzSpinModule,
     NzListModule,
     NzInputNumberModule,
+    NzRadioModule,
     // NzLayoutModule
   ],
   declarations: [
