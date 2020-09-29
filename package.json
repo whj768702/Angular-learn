@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "hmr": "ng serve --configuration hmr --proxy-config proxy.conf.json",
+    "hmr": "ng serve --configuration hmr --proxy-config proxy.conf.json --aot=true",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
