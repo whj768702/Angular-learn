@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {Hero} from '../../hero';
 import {HeroService} from '../../services/hero.service';
-import {NzMessageService} from 'ng-zorro-antd';
+import {NzConfigService} from "ng-zorro-antd/core/config";
 
 @Component({
   selector: 'sg-my-dashboard',
@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   loading = true;
 
   constructor(private heroService: HeroService,
-              private message: NzMessageService) {
+              private message: NzConfigService) {
   }
 
   ngOnInit(): void {
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
       this.loading = false;
     }, error => {
       this.loading = false;
-      this.message.create('error', error || '获取英雄列表失败');
+      this.message.set('message', error || '获取英雄列表失败');
     });
   }
 

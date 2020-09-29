@@ -4,7 +4,7 @@ import {Hero} from '../../hero';
 import {HeroService} from '../../services/hero.service';
 import {Router} from '@angular/router';
 import {Logger} from '../../services/logger.service';
-import {NzMessageService} from 'ng-zorro-antd';
+import {NzConfigService} from 'ng-zorro-antd/core/config';
 
 @Component({
   selector: 'sg-my-heroes',
@@ -24,7 +24,7 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
     private heroService: HeroService,
     private router: Router,
     private logger: Logger,
-    private message: NzMessageService) {
+    private message: NzConfigService) {
   }
 
   ngOnChanges(): void {
@@ -60,7 +60,7 @@ export class HeroesComponent implements OnInit, OnChanges, OnDestroy {
       this.heroes = this.heroes.filter(h => h !== hero);
     }, error => {
       this.loading = false;
-      this.message.create('error', '删除失败');
+      this.message.set('message', error || '删除失败');
     });
   }
 

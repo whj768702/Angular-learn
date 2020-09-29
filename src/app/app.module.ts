@@ -1,9 +1,14 @@
-import {NgModule, OnInit} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {NgModule, OnInit} from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {FormsModule} from "@angular/forms";
 
 // ng-zorro-antd
-import {NgZorroAntdModule} from 'ng-zorro-antd';
+// import {NgZorroAntdModule} from 'ng-zorro-antd';
+import {NzLayoutModule} from "ng-zorro-antd/layout";
+import {NzMenuModule} from "ng-zorro-antd/menu";
+import {NzSpinModule} from "ng-zorro-antd/spin";
+import {NzListModule} from "ng-zorro-antd/list";
+import {NzInputNumberModule} from "ng-zorro-antd/input-number";
 
 import {HeroesComponent} from './components/hero/heroes.component';
 import {HeroDetailComponent} from './components/hero/hero-detail.component';
@@ -27,15 +32,15 @@ import {UnlessDirective} from './components/structural-directive/unless.directiv
 import {MyUnlessComponent} from './components/structural-directive/my-unless.component';
 import {LifecycleHooksComponent} from './components/lifecycle-hooks/lifecycle-hooks';
 import {OnChangesComponent} from './components/lifecycle-hooks/OnChanges/onchanges.component';
-import {RouterModule} from '@angular/router';
+import {RouterModule} from "@angular/router";
 import {FeatureModulesModule} from './components/featureModules/feature-modules.module';
 import {ComponentInteractionModule} from './components/componentInteraction/component-interaction.module';
 import {DynamicComponentModule} from './components/dynamicComponentLoading/dynamic-component.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from "@angular/common/http";
 import {PipeComponent} from './components/pipes/pipe.component';
 import {NumberPipe} from './components/pipes/number.pipe';
 import {FormModule} from './components/form/form.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   imports: [
@@ -48,10 +53,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     RouterModule,
     AppRoutingModule,
     FormModule,
-    NgZorroAntdModule,
-    BrowserAnimationsModule
+    // NgZorroAntdModule,
+    BrowserAnimationsModule,
+    NzLayoutModule,
+    NzMenuModule,
+    NzSpinModule,
+    NzListModule,
+    NzInputNumberModule,
+    // NzLayoutModule
   ],
   declarations: [
+    // NzLayoutModule,
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
