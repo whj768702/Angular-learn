@@ -1,36 +1,48 @@
 <div class="form-wrap">
-  <div class="form-item">
+  <div>
     <span>使用FormControl创建表单</span>
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="reactive-form">
-      <div class="form-value">
-        <label>name:</label>
-        <input type="text" formControlName="name">
-      </div>
-      <div class="form-value">
-        <label>age:</label>
-        <input type="text" formControlName="age">
-      </div>
-      <div class="form-value">
-        <label>weight:</label>
-        <input type="text" formControlName="weight">
-      </div>
-      <div class="form-value">
-        <label>height:</label>
-        <input type="text" formControlName="height">
-      </div>
-      <div formGroupName="address">
-        <div class="form-value">
-          <label>city:</label>
-          <input type="text" formControlName="city">
-        </div>
-        <div class="form-value">
-          <label>phone:</label>
-          <input type="text" formControlName="phone">
-        </div>
-      </div>
-      <button class="form-submit" type="submit" [disabled]="!profileForm.valid">确定</button>
-      <button class="form-submit" type="button" (click)="setValue()">setValue</button>
-      <button class="form-submit" type="button" (click)="patchValue()">patchValue</button>
+    <form nz-form [formGroup]="profileForm" (ngSubmit)="onSubmit()" nzLayout="horizontal" class="reactive-form">
+      <nz-form-item>
+        <nz-form-label nzFor="name">name:</nz-form-label>
+        <nz-form-control>
+          <input nz-input id="name" type="text" formControlName="name">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="age">age:</nz-form-label>
+        <nz-form-control>
+          <input nz-input id="age" type="text" formControlName="age">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="weight">weight:</nz-form-label>
+        <nz-form-control>
+          <input nz-input id="weight" type="text" formControlName="weight">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="height">height:</nz-form-label>
+        <nz-form-control>
+          <input nz-input id="height" type="text" formControlName="height">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item formGroupName="address">
+        <nz-form-item>
+          <nz-form-label nzFor="city">city:</nz-form-label>
+          <nz-form-control>
+            <input nz-input id="city" type="text" formControlName="city">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="phone">phone:</nz-form-label>
+          <nz-form-control>
+            <input nz-input id="phone" type="text" formControlName="phone">
+          </nz-form-control>
+        </nz-form-item>
+      </nz-form-item>
+      <button nz-button nzType="primary" [disabled]="!profileForm.valid">确定</button>
+      <button nz-button nzType="default" (click)="setValue()">setValue</button>
+      <button nz-button nzType="default" (click)="patchValue()">patchValue</button>
     </form>
   </div>
   <div class="form-item">

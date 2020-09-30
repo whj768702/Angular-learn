@@ -8,12 +8,19 @@ import {TemplateFormComponent} from './components/template/template-form.compone
 import {DynamicFormComponent} from './components/dynamic/dynamic-form.component';
 import {DynamicFormQuestionComponent} from './components/dynamic/dynamic-form-question.component';
 
+import {NzGridModule} from "ng-zorro-antd/grid";
+import {NzButtonModule} from "ng-zorro-antd/button";
+import {NzInputModule} from "ng-zorro-antd/input";
+
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormRouting,
-    FormsModule
+    FormsModule,
+    NzGridModule,
+    NzButtonModule,
+    NzInputModule
   ],
   declarations: [
     FormComponent,
