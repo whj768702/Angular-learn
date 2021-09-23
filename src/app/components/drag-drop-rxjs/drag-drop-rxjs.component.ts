@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {defer, fromEvent} from 'rxjs';
-import {first, merge, mergeMap, switchMap, takeUntil, tap} from 'rxjs/operators';
+import {defer, fromEvent, zip} from 'rxjs';
+import {first, mergeWith, mergeMap, switchMap, takeUntil, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'drag-drop-rxjs',
@@ -32,15 +32,16 @@ export class DragDropRxjsComponent implements OnInit {
       event.preventDefault();
     }));
 
-  drop$ = defer(() => fromEvent(this.dropZone.nativeElement, 'drop')).pipe(tap((event: any) => {
-    event.preventDefault();
-    event.target.style.background = '';
-    console.log(event.dataTransfer.files[0].name);
-  }));
+  drop$ = defer(() => fromEvent(this.dropZone.nativeElement, 'drop'))
+    .pipe(tap((event: any) => {
+      event.preventDefault();
+      event.target.style.background = '';
+      console.log(event.dataTransfer.files[0].name);
+    }));
 
   dragAndDrop$ = this.dragEnter$.pipe(
     mergeMap(() => this.dragOver$),
-    switchMap(() => merge(this.dragExit$.pipe(first()), this.drop$.pipe(takeUntil(this.dragEnd$))))
+    switchMap(() => zip(this.dragExit$.pipe(first()), this.drop$.pipe(takeUntil(this.dragEnd$))))
   );
 
   ngOnInit() {

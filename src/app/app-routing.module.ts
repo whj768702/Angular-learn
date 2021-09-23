@@ -24,19 +24,19 @@ const routes: Routes = [
   {path: 'pipe', component: PipeComponent},
   {
     path: 'template',
-    loadChildren: './components/featureModules/feature-modules.module#FeatureModulesModule'
+    loadChildren: () => import('./components/featureModules/feature-modules.module').then(mod => mod.FeatureModulesModule)
   },
   {
     path: 'component-interaction',
-    loadChildren: './components/componentInteraction/component-interaction.module#ComponentInteractionModule'
+    loadChildren: () => import('./components/componentInteraction/component-interaction.module').then(mod => mod.ComponentInteractionModule)
   },
   {
     path: 'dynamic-component-loading',
-    loadChildren: './components/dynamicComponentLoading/dynamic-component.module#DynamicComponentModule'
+    loadChildren: () => import('./components/dynamicComponentLoading/dynamic-component.module').then(mod=>mod.DynamicComponentModule)
   },
   {
     path: 'form',
-    loadChildren: './components/form/form.module#FormModule'
+    loadChildren: () => import('./components/form/form.module').then(mod=>mod.FormModule)
   }
 ];
 
