@@ -15,33 +15,35 @@ import {
 export class ReactiveFormComponent {
   @Output() submit = new EventEmitter();
 
-  profileForm = new FormGroup({
-    name: new FormControl(''),
-    age: new FormControl(''),
-    weight: new FormControl(''),
-    height: new FormControl(''),
-    address: new FormGroup({
-      city: new FormControl(''),
-      phone: new FormControl('')
-    })
-  });
-
-  /* FormBuilder有三个方法：
-   * 1. control()对应FormControl
-   * 2. group()对应FormGroup
-   * 3. array()对应FormArray
-   * */
-  personalForm = this.formBuilder.group({
-    name: ['', Validators.required],
-    age: 20,
-    moreInfo: this.formBuilder.group({
-      weight: 100,
-      height: 100
-    }),
-    aliases: this.formBuilder.array([this.formBuilder.control('')])
-  });
+  profileForm: FormGroup;
+  personalForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
+    this.profileForm = new FormGroup({
+      name: new FormControl(''),
+      age: new FormControl(undefined),
+      weight: new FormControl(undefined),
+      height: new FormControl(undefined),
+      address: new FormGroup({
+        city: new FormControl(''),
+        phone: new FormControl(undefined)
+      })
+    });
+
+    /* FormBuilder有三个方法：
+     * 1. control()对应FormControl
+     * 2. group()对应FormGroup
+     * 3. array()对应FormArray
+     * */
+    this.personalForm = formBuilder.group({
+      name: ['', Validators.required],
+      age: 20,
+      moreInfo: this.formBuilder.group({
+        weight: 100,
+        height: 100
+      }),
+      aliases: this.formBuilder.array([this.formBuilder.control('')])
+    });
   }
 
   // 父表单组中接收表示绰号的表单数组控件

@@ -17,10 +17,10 @@ import {DynamicComponentDirective} from './dynamic-component.directive';
     TwoComponent,
     DynamicComponentDirective
   ],
-  entryComponents: [
-    OneComponent,
-    TwoComponent
-  ]
+  // entryComponents: [
+  //   OneComponent,
+  //   TwoComponent
+  // ]
 })
 
 export class DynamicComponentModule {
