@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "hmr": "ng serve --configuration hmr --proxy-config proxy.conf.json --aot=true",
+    "hmr": "ng serve --configuration hmr --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,25 +12,25 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^16.2.6",
-    "@angular/common": "^16.2.6",
-    "@angular/compiler": "^16.2.6",
-    "@angular/core": "^16.2.6",
-    "@angular/forms": "^16.2.6",
+    "@angular/animations": "^17.0.3",
+    "@angular/common": "^17.0.3",
+    "@angular/compiler": "^17.0.3",
+    "@angular/core": "^17.0.3",
+    "@angular/forms": "^17.0.3",
     "@angular/http": "^7.2.16",
-    "@angular/platform-browser": "^16.2.6",
-    "@angular/platform-browser-dynamic": "^16.2.6",
-    "@angular/router": "^16.2.6",
+    "@angular/platform-browser": "^17.0.3",
+    "@angular/platform-browser-dynamic": "^17.0.3",
+    "@angular/router": "^17.0.3",
     "core-js": "^3.32.2",
     "ng-zorro-antd": "^16.2.0",
     "rxjs": "^7.8.1",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.2.3",
-    "@angular/cli": "^16.2.3",
-    "@angular/compiler-cli": "^16.2.6",
-    "@angular/language-service": "^16.2.6",
+    "@angular-devkit/build-angular": "^17.0.1",
+    "@angular/cli": "^17.0.1",
+    "@angular/compiler-cli": "^17.0.3",
+    "@angular/language-service": "^17.0.3",
     "@angularclass/hmr": "^3.0.0",
     "@types/jasmine": "^3.9.1",
     "@types/jasminewd2": "^2.0.10",
@@ -47,6 +47,6 @@
     "nz-tslint-rules": "^0.901.2",
     "protractor": "^7.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "~5.0.0"
+    "typescript": "~5.2.2"
   }
 }
